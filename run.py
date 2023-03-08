@@ -2,10 +2,22 @@ import random
 from words import WORDS
 
 
-def get_word():
+def main_game():
+    '''
+    Get a dictionary from the list in words.py,
+    and print out one spanish word, from it.
+    Ask user to translate the spainish word.
+    Check if the answer is correct
+    '''
     word = random.choice(WORDS)
     english_word = word['english']
-    print(english_word)
+    spanish_word = word['spanish']
+    print(spanish_word)
+    answer = input().lower()
+    if answer == english_word:
+        print("Correct")
+    else:
+        print(f'Incorrect, the answer is {english_word},you have lost a life')
 
 
 def start_game():
@@ -15,7 +27,7 @@ def start_game():
     print("Type Y for yes to the start game")
     inp = input().lower()
     if inp == "y":
-        get_word()
+        main_game()
     else:
         print("You must type 'y' or 'n' ")
 
