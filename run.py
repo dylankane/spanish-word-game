@@ -4,7 +4,8 @@ from words import WORDS
 
 def get_word():
     word = random.choice(WORDS)
-    print(word)
+    english_word = word['english']
+    print(english_word)
 
 
 def start_game():
