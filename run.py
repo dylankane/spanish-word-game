@@ -9,15 +9,26 @@ def main_game():
     Ask user to translate the spainish word.
     Check if the answer is correct
     '''
-    word = random.choice(WORDS)
-    english_word = word['english']
-    spanish_word = word['spanish']
-    print(spanish_word)
-    answer = input().lower()
-    if answer == english_word:
-        print("Correct")
-    else:
-        print(f'Incorrect, the answer is {english_word},you have lost a life')
+    lives = 3
+    score = 0
+
+    while lives >= 0 or score <= 20:
+        word = random.choice(WORDS)
+        english_word = word['english']
+        spanish_word = word['spanish']
+        print(spanish_word)
+        answer = input().lower()
+        if answer == english_word:
+            print("Correct")
+            score += 1
+            print(f'You have {lives} lives left')
+            print(f'Your score is {score}')
+        else:
+            print(f'Incorrect, the answer is {english_word}')
+            lives -= 1
+            print(f'you have {lives} left')
+            print(f'Your score is {score}')
+            print(lives)
 
 
 def start_game():
