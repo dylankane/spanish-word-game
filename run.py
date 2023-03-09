@@ -7,11 +7,35 @@ colorama.init(autoreset=True)
 
 
 def you_lose():
-    print('gameover')
+    print(f'{Fore.RED} GAMEOVER \n')
+    print(f"{Fore.WHITE}Type {Fore.YELLOW}C {Fore.WHITE}to contimue")
+    contin = input().upper()
+    while contin != "C":
+        print("Please enter C to continue")
+        contin = input().upper()
 
-
-def restart():
+    os.system('cls' if os.name == 'nt' else 'clear')
     start_game()
+
+
+def you_win():
+    print(Fore.GREEN + 'CONGRATULATIONS')
+    print(f'{Fore.GREEN}You scored {score}')
+    print(f"{Fore.WHITE}Type {Fore.YELLOW}C {Fore.WHITE}to contimue")
+    contin = input().upper()
+    while contin != "C":
+        print("Please enter C to continue")
+        contin = input().upper()
+
+    os.system('cls' if os.name == 'nt' else 'clear')
+    start_game()
+
+
+def finished(x, y):
+    if x <= 0:
+        you_lose()
+    elif y >= 3:
+        you_win()
 
 
 def rules():
@@ -26,13 +50,12 @@ def rules():
     print("")
     print(f"{Fore.WHITE}Type {Fore.YELLOW}C {Fore.WHITE}to contimue")
     contin = input().upper()
-    if inp == "C":
-        os.system('cls' if os.name == 'nt' else 'clear')
-        start_game()
+    while contin != "C":
+        print("Please enter C to continue")
+        contin = input().upper()
 
-    else:
-        print("Unidentified entry")
-        print(f"{Fore.WHITE}Type {Fore.YELLOW}C {Fore.WHITE}to contimue")
+    os.system('cls' if os.name == 'nt' else 'clear')
+    start_game()
 
 
 def main_game():
@@ -44,32 +67,47 @@ def main_game():
     '''
     lives = 3
     score = 0
+    print("")
+    print(Fore.YELLOW + "**********SPANISH WORD GAME**********")
+    print("")
+    print("Type the translation to the following words")
+    print(Fore.YELLOW + "-----------------")
 
-    while lives >= 0 or score <= 3:
+    while lives > 0 and score < 3:
         word = random.choice(WORDS)
         english_word = word['english']
         spanish_word = word['spanish']
         print(spanish_word)
         answer = input().lower()
         if answer == english_word:
-            print("Correct")
+            print(Fore.GREEN + "Correct")
             score += 1
-            print(f'You have {lives} lives left')
-            print(f'Your score is {score}')
+            print(f'lives = {lives}')
+            print(f'score = {score}')
+            print(Fore.YELLOW + "-----------------")
         else:
-            print(f'Incorrect, the answer is {english_word}')
+            print(f'{Fore.RED}Incorrect,\n the answer is {Fore.YELLOW}{english_word}')
             lives -= 1
-            print(f'you have {lives} lives left')
-            print(f'Your score is {score}')
-    else:
-        if lives < 0:
-            you_lose()
+            print(f'lives = {lives}')
+            print(f'score = {score}')
+            print(Fore.YELLOW + "-----------------")
+
+    finished(lives, score)
+    # else:
+    #     if lives < 0:
+    #         you_lose()
+
+    #     elif score > 3:
+    #         win()
 
 
 def start_game():
     '''
     Function to ask user if they are ready to start the game
     '''
+    print("")
+    print(Fore.YELLOW + "**********SPANISH WORD GAME**********")
+    print("")
     print(f"{Fore.WHITE}Type {Fore.YELLOW}G {Fore.WHITE}to the start game")
     print(f"{Fore.WHITE}Type {Fore.YELLOW}R {Fore.WHITE}to see the game rules")
     inp = input().upper()
@@ -88,7 +126,7 @@ def start_game():
 
 
 print("")
-print(Fore.YELLOW + "**********SPANISH WORD GAME**********")
+print(Fore.YELLOW + "***********WELCOME TO THE************")
 print("")
 
 start_game()
