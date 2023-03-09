@@ -2,6 +2,14 @@ import random
 from words import WORDS
 
 
+def you_lose():
+    print('gameover')
+
+
+def restart():
+    start_game()
+
+
 def main_game():
     '''
     Get a dictionary from the list in words.py,
@@ -12,7 +20,7 @@ def main_game():
     lives = 3
     score = 0
 
-    while lives >= 0 or score <= 20:
+    while lives >= 0 or score <= 3:
         word = random.choice(WORDS)
         english_word = word['english']
         spanish_word = word['spanish']
@@ -26,9 +34,12 @@ def main_game():
         else:
             print(f'Incorrect, the answer is {english_word}')
             lives -= 1
-            print(f'you have {lives} left')
+            print(f'you have {lives} lives left')
             print(f'Your score is {score}')
             print(lives)
+    else:
+        if lives < 0:
+            you_lose()
 
 
 def start_game():
@@ -41,6 +52,7 @@ def start_game():
         main_game()
     else:
         print("You must type 'y' or 'n' ")
+        restart()
 
 
 print("")
