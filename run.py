@@ -15,12 +15,24 @@ def restart():
 
 
 def rules():
+    print("")
+    print(Fore.YELLOW + "**********SPANISH WORD GAME**********")
+    print("")
     print(f"{Back.YELLOW}-----------The Rules-----------")
     print("-Start your game, and you will be given a word-")
     print("-Just type the english translation for this word-")
     print("-You have 3 lives to make 20 correct answers to win the game-")
     print("")
-    print("") 
+    print("")
+    print(f"{Fore.WHITE}Type {Fore.YELLOW}C {Fore.WHITE}to contimue")
+    contin = input().upper()
+    if inp == "C":
+        os.system('cls' if os.name == 'nt' else 'clear')
+        start_game()
+
+    else:
+        print("Unidentified entry")
+        print(f"{Fore.WHITE}Type {Fore.YELLOW}C {Fore.WHITE}to contimue")
 
 
 def main_game():
@@ -61,15 +73,18 @@ def start_game():
     print(f"{Fore.WHITE}Type {Fore.YELLOW}G {Fore.WHITE}to the start game")
     print(f"{Fore.WHITE}Type {Fore.YELLOW}R {Fore.WHITE}to see the game rules")
     inp = input().upper()
+
     if inp == "G":
         os.system('cls' if os.name == 'nt' else 'clear')
         main_game()
+
     elif inp == "R":
+        os.system('cls' if os.name == 'nt' else 'clear')
         rules()
 
     else:
         print("You must type 'G' or 'R' ")
-        restart()
+        inp = input().upper()
 
 
 print("")
