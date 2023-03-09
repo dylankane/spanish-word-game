@@ -105,6 +105,9 @@ def start_game():
     print(f"{Fore.WHITE}Type {Fore.YELLOW}G {Fore.WHITE}to the start game")
     print(f"{Fore.WHITE}Type {Fore.YELLOW}R {Fore.WHITE}to see the game rules")
     inp = input().upper()
+    while inp != "G" and "R":
+        print("Please enter G or R to continue")
+        inp = input().upper()
 
     if inp == "G":
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -113,12 +116,6 @@ def start_game():
     elif inp == "R":
         os.system('cls' if os.name == 'nt' else 'clear')
         rules()
-
-    else:
-        while inp != "G" and "R":
-            print("Please enter G or R to continue")
-            inp = input().upper()
-
 
 
 print("")
