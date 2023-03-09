@@ -1,3 +1,4 @@
+import os
 import random
 from words import WORDS
 import colorama
@@ -61,6 +62,7 @@ def start_game():
     print(f"{Fore.WHITE}Type {Fore.YELLOW}R {Fore.WHITE}to see the game rules")
     inp = input().upper()
     if inp == "G":
+        os.system('cls' if os.name == 'nt' else 'clear')
         main_game()
     elif inp == "R":
         rules()
