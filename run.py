@@ -93,12 +93,6 @@ def main_game():
             print(Fore.YELLOW + "-----------------")
 
     finished(lives, score)
-    # else:
-    #     if lives < 0:
-    #         you_lose()
-
-    #     elif score > 3:
-    #         win()
 
 
 def start_game():
@@ -121,8 +115,10 @@ def start_game():
         rules()
 
     else:
-        print("You must type 'G' or 'R' ")
-        inp = input().upper()
+        while inp != "G" and "R":
+            print("Please enter G or R to continue")
+            inp = input().upper()
+
 
 
 print("")
