@@ -1,5 +1,8 @@
 import random
 from words import WORDS
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
 
 
 def you_lose():
@@ -8,6 +11,15 @@ def you_lose():
 
 def restart():
     start_game()
+
+
+def rules():
+    print(f"{Back.YELLOW}-----------The Rules-----------")
+    print("-Start your game, and you will be given a word-")
+    print("-Just type the english translation for this word-")
+    print("-You have 3 lives to make 20 correct answers to win the game-")
+    print("")
+    print("") 
 
 
 def main_game():
@@ -36,7 +48,6 @@ def main_game():
             lives -= 1
             print(f'you have {lives} lives left')
             print(f'Your score is {score}')
-            print(lives)
     else:
         if lives < 0:
             you_lose()
@@ -46,27 +57,21 @@ def start_game():
     '''
     Function to ask user if they are ready to start the game
     '''
-    print("Type Y for yes to the start game")
-    inp = input().lower()
-    if inp == "y":
+    print(f"{Fore.WHITE}Type {Fore.YELLOW}G {Fore.WHITE}to the start game")
+    print(f"{Fore.WHITE}Type {Fore.YELLOW}R {Fore.WHITE}to see the game rules")
+    inp = input().upper()
+    if inp == "G":
         main_game()
+    elif inp == "R":
+        rules()
+
     else:
-        print("You must type 'y' or 'n' ")
+        print("You must type 'G' or 'R' ")
         restart()
 
 
 print("")
-print("****SPANISH WORD GAME****")
-print("")
-print("-----------The Rules-----------")
-print("-Start your game, and you will be given a word-")
-print("-Just type the english translation for this word-")
-print("-You have 3 lives to make 20 correct answers to win the game-")
-print("")
+print(Fore.YELLOW + "**********SPANISH WORD GAME**********")
 print("")
 
 start_game()
-
-# word = random.choice(WORDS)
-# print(word)
-# python3 run.py
