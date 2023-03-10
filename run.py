@@ -6,6 +6,25 @@ from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
 
+def question(x, y):
+    '''
+    Function to ask the user a [y/n] question, which takes functions as
+    parameters. These functions are assigned to the y and n answers.
+    '''
+    func_1 = x
+    func_2 = y
+    while True:
+        user = input(f"{Fore.YELLOW}[Y/N]{Fore.RESET}\n").upper()
+        if user == "Y":
+            os.system('cls' if os.name == 'nt' else 'clear')
+            func_1()
+        elif user == "N":
+            os.system('cls' if os.name == 'nt' else 'clear')
+            func_2()
+        else:
+            print(f"Invalid entry, please type 'Y' for yes or 'N' for no")
+
+
 def you_lose(x, y):
     '''
     Function to handle when the user runs out of lives. Displays scores, and
@@ -17,16 +36,7 @@ def you_lose(x, y):
     print(f"Good try but you ran out of lives")
     print(f'{Fore.GREEN}You scored {score}')
     print(f"Would you like to start a new game now?")
-    user = input(f"{Fore.YELLOW} [Y/N]\n ").upper()
-    while user != "Y" and "N":
-        print(f"Invalid entry, please type 'y' or 'N'")
-        user = input(Fore.YELLOW + "[Y/N] ").upper()
-    if user == "Y":
-        os.system('cls' if os.name == 'nt' else 'clear')
-        main_game()
-    elif user == "N":
-        os.system('cls' if os.name == 'nt' else 'clear')
-        start_game()
+    question(main_game, start_game)
 
 
 def you_win(x, y):
@@ -41,16 +51,7 @@ def you_win(x, y):
     print(f"With lives {lives} left")
     print(f"Well done!!!")
     print(f"Would you like to start a new game now?")
-    user = input(f"{Fore.YELLOW} [Y/N]\n ").upper()
-    while user != "Y" and "N":
-        print(f"Invalid entry, please type 'y' or 'N'")
-        user = input(Fore.YELLOW + "[Y/N] ").upper()
-    if user == "Y":
-        os.system('cls' if os.name == 'nt' else 'clear')
-        main_game()
-    elif user == "N":
-        os.system('cls' if os.name == 'nt' else 'clear')
-        start_game()
+    question(main_game, start_game)
 
 
 def finished(x, y):
@@ -74,7 +75,7 @@ def rules():
     for user to read. Asks user for input to direct them to the game
     '''
     print("")
-    print(Fore.YELLOW + "**********SPANISH WORD GAME**********")
+    print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********")
     print("")
     print(f"{Back.YELLOW}-----------The Rules-----------")
     print("-Start your game, and you will be given a word-")
@@ -86,16 +87,7 @@ def rules():
     print("")
     print("")
     print(f"Would you like to start the game now?")
-    user = input(f"{Fore.YELLOW} [Y/N]\n ").upper()
-    while user != "Y" and "N":
-        print(f"Invalid entry, please type 'y' or 'N'")
-        user = input(Fore.YELLOW + "[Y/N] ").upper()
-    if user == "Y":
-        os.system('cls' if os.name == 'nt' else 'clear')
-        main_game()
-    elif user == "N":
-        os.system('cls' if os.name == 'nt' else 'clear')
-        start_game()
+    question(main_game, start_game)
 
 
 def main_game():
@@ -119,7 +111,7 @@ def main_game():
         word = random.choice(WORDS)
         english_word = word['english']
         spanish_word = word['spanish']
-        print(spanish_word)
+        print(f"{Style.BRIGHT}{spanish_word}")
         answer = input().lower()
         if answer == english_word:
             print(Fore.GREEN + "Correct")
@@ -138,22 +130,6 @@ def main_game():
     finished(lives, score)
 
 
-def question(func_1, func_2):
-    '''
-    Function
-    '''
-    user = input(f"{Fore.YELLOW} [Y/N]\n").upper()
-    while True:
-        if user == "Y":
-            os.system('cls' if os.name == 'nt' else 'clear')
-            return func_1
-        elif user == "N":
-            os.system('cls' if os.name == 'nt' else 'clear')
-            return func_2
-        else:
-            print(f"Invalid entry, please type 'y' or 'N'")
-
-
 def start_game():
     '''
     Function to ask user if they are ready to start the game,
@@ -165,7 +141,7 @@ def start_game():
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********")
     print("")
     print("Would you like to see the rules before you start the game?")
-    question(rules(), main_game())
+    question(rules, main_game)
 
 
 start_game()
