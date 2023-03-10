@@ -19,10 +19,10 @@ def you_lose():
     while user != "Y" and "N":
         print(f"Invalid entry, please type 'y' or 'N'")
         user = input(Fore.YELLOW + "[Y/N] ").upper()
-    if inp == "Y":
+    if user == "Y":
         os.system('cls' if os.name == 'nt' else 'clear')
         main_game()
-    elif inp == "N":
+    elif user == "N":
         os.system('cls' if os.name == 'nt' else 'clear')
         start_game()
 
@@ -41,10 +41,10 @@ def you_win():
     while user != "Y" and "N":
         print(f"Invalid entry, please type 'y' or 'N'")
         user = input(Fore.YELLOW + "[Y/N] ").upper()
-    if inp == "Y":
+    if user == "Y":
         os.system('cls' if os.name == 'nt' else 'clear')
         main_game()
-    elif inp == "N":
+    elif user == "N":
         os.system('cls' if os.name == 'nt' else 'clear')
         start_game()
 
@@ -84,10 +84,10 @@ def rules():
     while user != "Y" and "N":
         print(f"Invalid entry, please type 'y' or 'N'")
         user = input(Fore.YELLOW + "[Y/N] ").upper()
-    if inp == "Y":
+    if user == "Y":
         os.system('cls' if os.name == 'nt' else 'clear')
         main_game()
-    elif inp == "N":
+    elif user == "N":
         os.system('cls' if os.name == 'nt' else 'clear')
         start_game()
 
