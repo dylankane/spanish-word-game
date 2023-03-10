@@ -6,11 +6,13 @@ from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
 
-def you_lose():
+def you_lose(x, y):
     '''
     Function to handle when the user runs out of lives. Displays scores, and
     directs them back to the game.
     '''
+    lives = x
+    score = y
     print(f'{Fore.RED}GAMEOVER')
     print(f"Good try but you ran out of lives")
     print(f'{Fore.GREEN}You scored {score}')
@@ -27,14 +29,16 @@ def you_lose():
         start_game()
 
 
-def you_win():
+def you_win(x, y):
     '''
     Function to handle when the user completes the game.
     Displays, score and lives. Directs them back to the game.
     '''
+    lives = x
+    score = y
     print(f"{Fore.GREEN}CONGRATULATIONS")
     print(f'{Fore.GREEN}You scored {score}')
-    print(f"With {lives} left")
+    print(f"With lives {lives} left")
     print(f"Well done!!!")
     print(f"Would you like to start a new game now?")
     user = input(f"{Fore.YELLOW} [Y/N]\n ").upper()
@@ -54,12 +58,14 @@ def finished(x, y):
     Function to handle the score vs lives counters, when game ends, to decide
     where to send them,to the you_win or you_lose functions
     '''
+    lives = x
+    score = y
     if x <= 0:
         os.system('cls' if os.name == 'nt' else 'clear')
-        you_lose()
+        you_lose(lives, score)
     elif y >= 3:
         os.system('cls' if os.name == 'nt' else 'clear')
-        you_win()
+        you_win(lives, score)
 
 
 def rules():
@@ -132,6 +138,22 @@ def main_game():
     finished(lives, score)
 
 
+def question(func_1, func_2):
+    '''
+    Function
+    '''
+    user = input(f"{Fore.YELLOW} [Y/N]\n").upper()
+    while True:
+        if user == "Y":
+            os.system('cls' if os.name == 'nt' else 'clear')
+            return func_1
+        elif user == "N":
+            os.system('cls' if os.name == 'nt' else 'clear')
+            return func_2
+        else:
+            print(f"Invalid entry, please type 'y' or 'N'")
+
+
 def start_game():
     '''
     Function to ask user if they are ready to start the game,
@@ -143,16 +165,7 @@ def start_game():
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********")
     print("")
     print("Would you like to see the rules before you start the game?")
-    inp = input(f"{Fore.YELLOW}[Y/N]\n").upper()
-    while inp != "Y" and "N":
-        print(f"Invalid entry, please type 'y' or 'N'")
-        inp = input(f"{Fore.YELLOW}[Y/N]\n").upper()
-    if inp == "Y":
-        os.system('cls' if os.name == 'nt' else 'clear')
-        rules()
-    elif inp == "N":
-        os.system('cls' if os.name == 'nt' else 'clear')
-        main_game()
+    question(rules(), main_game())
 
 
 start_game()
