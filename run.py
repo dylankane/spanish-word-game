@@ -48,14 +48,14 @@ def rules():
     print("-You have 3 lives to make 20 correct answers to win the game-")
     print("")
     print("")
-    print(f"{Fore.WHITE}Type {Fore.YELLOW}C {Fore.WHITE}to contimue")
-    contin = input().upper()
-    while contin != "C":
-        print("Please enter C to continue")
-        contin = input().upper()
+    print(f"Would you like to start the game now?")
+    user = input(f"{Fore.YELLOW} [Y/N]\n ").upper()
+    while user != "Y" and "N":
+        print(f"Invalid entry, please type 'y' or 'N'")
+        user = input(Fore.YELLOW + "[Y/N] ").upper()
 
     os.system('cls' if os.name == 'nt' else 'clear')
-    start_game()
+    main_game()
 
 
 def main_game():
@@ -86,7 +86,8 @@ def main_game():
             print(f'score = {score}')
             print(Fore.YELLOW + "-----------------")
         else:
-            print(f'{Fore.RED}Incorrect,\n the answer is {Fore.YELLOW}{english_word}')
+            print(f'{Fore.RED}Incorrect')
+            print(f"the answer is {Fore.YELLOW}{english_word}")
             lives -= 1
             print(f'lives = {lives}')
             print(f'score = {score}')
@@ -102,24 +103,18 @@ def start_game():
     print("")
     print(Fore.YELLOW + "**********SPANISH WORD GAME**********")
     print("")
-    print(f"{Fore.WHITE}Type {Fore.YELLOW}G {Fore.WHITE}to the start game")
-    print(f"{Fore.WHITE}Type {Fore.YELLOW}R {Fore.WHITE}to see the game rules")
-    inp = input().upper()
-    while inp != "G" and "R":
-        print("Please enter G or R to continue")
-        inp = input().upper()
-
-    if inp == "G":
-        os.system('cls' if os.name == 'nt' else 'clear')
-        main_game()
-
-    elif inp == "R":
-        os.system('cls' if os.name == 'nt' else 'clear')
+    print("Would you like to see the rules before you start the game?")
+    inp = input(f"{Fore.YELLOW}[Y/N]\n").upper()
+    while inp != "Y" and "N":
+        print(f"Invalid entry, please type 'y' or 'N'")
+        inp = input(f"{Fore.YELLOW}[Y/N]\n").upper()
+    if inp == "Y":
         rules()
+    elif inp == "N":
+        main_game()
 
 
 print("")
 print(Fore.YELLOW + "***********WELCOME TO THE************")
-print("")
 
 start_game()
