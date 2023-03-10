@@ -7,45 +7,76 @@ colorama.init(autoreset=True)
 
 
 def you_lose():
-    print(f'{Fore.RED} GAMEOVER \n')
-    print(f"{Fore.WHITE}Type {Fore.YELLOW}C {Fore.WHITE}to contimue")
-    contin = input().upper()
-    while contin != "C":
-        print("Please enter C to continue")
-        contin = input().upper()
-
-    os.system('cls' if os.name == 'nt' else 'clear')
-    start_game()
+    '''
+    Function to handle when the user runs out of lives. Displays scores, and
+    directs them back to the game.
+    '''
+    print(f'{Fore.RED}GAMEOVER')
+    print(f"Good try but you ran out of lives")
+    print(f'{Fore.GREEN}You scored {score}')
+    print(f"Would you like to start a new game now?")
+    user = input(f"{Fore.YELLOW} [Y/N]\n ").upper()
+    while user != "Y" and "N":
+        print(f"Invalid entry, please type 'y' or 'N'")
+        user = input(Fore.YELLOW + "[Y/N] ").upper()
+    if inp == "Y":
+        os.system('cls' if os.name == 'nt' else 'clear')
+        main_game()
+    elif inp == "N":
+        os.system('cls' if os.name == 'nt' else 'clear')
+        start_game()
 
 
 def you_win():
-    print(Fore.GREEN + 'CONGRATULATIONS')
+    '''
+    Function to handle when the user completes the game.
+    Displays, score and lives. Directs them back to the game.
+    '''
+    print(f"{Fore.GREEN}CONGRATULATIONS")
     print(f'{Fore.GREEN}You scored {score}')
-    print(f"{Fore.WHITE}Type {Fore.YELLOW}C {Fore.WHITE}to contimue")
-    contin = input().upper()
-    while contin != "C":
-        print("Please enter C to continue")
-        contin = input().upper()
-
-    os.system('cls' if os.name == 'nt' else 'clear')
-    start_game()
+    print(f"With {lives} left")
+    print(f"Well done!!!")
+    print(f"Would you like to start a new game now?")
+    user = input(f"{Fore.YELLOW} [Y/N]\n ").upper()
+    while user != "Y" and "N":
+        print(f"Invalid entry, please type 'y' or 'N'")
+        user = input(Fore.YELLOW + "[Y/N] ").upper()
+    if inp == "Y":
+        os.system('cls' if os.name == 'nt' else 'clear')
+        main_game()
+    elif inp == "N":
+        os.system('cls' if os.name == 'nt' else 'clear')
+        start_game()
 
 
 def finished(x, y):
+    '''
+    Function to handle the score vs lives counters, when game ends, to decide
+    where to send them,to the you_win or you_lose functions
+    '''
     if x <= 0:
+        os.system('cls' if os.name == 'nt' else 'clear')
         you_lose()
     elif y >= 3:
+        os.system('cls' if os.name == 'nt' else 'clear')
         you_win()
 
 
 def rules():
+    '''
+    Holds set of game rules, can be accessed from different areasof the game,
+    for user to read. Asks user for input to direct them to the game
+    '''
     print("")
     print(Fore.YELLOW + "**********SPANISH WORD GAME**********")
     print("")
     print(f"{Back.YELLOW}-----------The Rules-----------")
     print("-Start your game, and you will be given a word-")
     print("-Just type the english translation for this word-")
-    print("-You have 3 lives to make 20 correct answers to win the game-")
+    print("-You have 3 lives to complete the game-")
+    print("-Each correct translation is one point-")
+    print("-If your answer is incorrect the correct answer will be shown-")
+    print("-Have fun and learn !!!-")
     print("")
     print("")
     print(f"Would you like to start the game now?")
@@ -53,23 +84,28 @@ def rules():
     while user != "Y" and "N":
         print(f"Invalid entry, please type 'y' or 'N'")
         user = input(Fore.YELLOW + "[Y/N] ").upper()
-
-    os.system('cls' if os.name == 'nt' else 'clear')
-    main_game()
+    if inp == "Y":
+        os.system('cls' if os.name == 'nt' else 'clear')
+        main_game()
+    elif inp == "N":
+        os.system('cls' if os.name == 'nt' else 'clear')
+        start_game()
 
 
 def main_game():
     '''
-    Get a dictionary from the list in words.py,
-    and print out one spanish word, from it.
-    Ask user to translate the spainish word.
-    Check if the answer is correct
+    Gets a random set of translations from a list of dictionaries in words.py.
+    Prints out one spanish word using its dictionary key. Prompts the user to
+    translate it and compare their answer to the matching english word.
+    Keeps score count and lives counter, to determine the end of game
     '''
     lives = 3
     score = 0
     print("")
-    print(Fore.YELLOW + "**********SPANISH WORD GAME**********")
+    print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********")
     print("")
+    print(f"{Fore.MAGENTA} OK Here We Go!!!")
+    print("You have 3 lives. Score 20 points to win the game.")
     print("Type the translation to the following words")
     print(Fore.YELLOW + "-----------------")
 
@@ -98,10 +134,13 @@ def main_game():
 
 def start_game():
     '''
-    Function to ask user if they are ready to start the game
+    Function to ask user if they are ready to start the game,
+    or want to see the set of game rules.
     '''
     print("")
-    print(Fore.YELLOW + "**********SPANISH WORD GAME**********")
+    print(f"{Fore.YELLOW}***********WELCOME TO THE************")
+    print("")
+    print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********")
     print("")
     print("Would you like to see the rules before you start the game?")
     inp = input(f"{Fore.YELLOW}[Y/N]\n").upper()
@@ -109,12 +148,11 @@ def start_game():
         print(f"Invalid entry, please type 'y' or 'N'")
         inp = input(f"{Fore.YELLOW}[Y/N]\n").upper()
     if inp == "Y":
+        os.system('cls' if os.name == 'nt' else 'clear')
         rules()
     elif inp == "N":
+        os.system('cls' if os.name == 'nt' else 'clear')
         main_game()
 
-
-print("")
-print(Fore.YELLOW + "***********WELCOME TO THE************")
 
 start_game()
