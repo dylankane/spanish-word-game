@@ -1,4 +1,5 @@
 import os
+import copy
 import random
 from words import WORDS
 import colorama
@@ -97,6 +98,7 @@ def main_game():
     '''
     lives = 3
     score = 0
+    word_list = copy.deepcopy(WORDS)
     print("")
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
     print(f"{Fore.MAGENTA} OK Here We Go!!!\n\n")
@@ -104,7 +106,8 @@ def main_game():
     print(Fore.YELLOW + "-----------------")
 
     while lives > 0 and score < 3:
-        word = random.choice(WORDS)
+        random.shuffle(word_list)
+        word = word_list.pop(0)
         english_word = word['english']
         spanish_word = word['spanish']
         print(f"{Style.BRIGHT}{spanish_word}")
