@@ -46,10 +46,10 @@ def you_win(x, y):
     '''
     lives = x
     score = y
-    print(f"{Fore.GREEN}CONGRATULATIONS")
+    print(f"{Fore.GREEN}CONGRATULATIONS\n")
     print(f'{Fore.GREEN}You scored {score}')
-    print(f"With lives {lives} left")
-    print(f"Well done!!!")
+    print(f"With {lives} lives left")
+    print(f"Well done!!!\n")
     print(f"Would you like to start a new game now?")
     question(main_game, start_game)
 
@@ -75,17 +75,15 @@ def rules():
     for user to read. Asks user for input to direct them to the game
     '''
     print("")
-    print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********")
-    print("")
+    print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
     print(f"{Back.YELLOW}-----------The Rules-----------")
-    print("-Start your game, and you will be given a word-")
-    print("-Just type the english translation for this word-")
-    print("-You have 3 lives to complete the game-")
-    print("-Each correct translation is one point-")
-    print("-If your answer is incorrect the correct answer will be shown-")
-    print("-Have fun and learn !!!-")
-    print("")
-    print("")
+    print("-Start your game, and you will be given a Spanish word")
+    print("-Just type the english translation for this word")
+    print("-You have 3 lives to complete the game")
+    print("-Each correct translation is 1 point")
+    print("-Score 20 points to win")
+    print("-If your answer is incorrect the correct answer will be shown")
+    print(f"-Have fun and learn !!!\n\n")
     print(f"Would you like to start the game now?")
     question(main_game, start_game)
 
@@ -100,11 +98,9 @@ def main_game():
     lives = 3
     score = 0
     print("")
-    print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********")
-    print("")
-    print(f"{Fore.MAGENTA} OK Here We Go!!!")
-    print("You have 3 lives. Score 20 points to win the game.")
-    print("Type the translation to the following words")
+    print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
+    print(f"{Fore.MAGENTA} OK Here We Go!!!\n\n")
+    print(f"Type the translation to the following words\n")
     print(Fore.YELLOW + "-----------------")
 
     while lives > 0 and score < 3:
@@ -114,17 +110,19 @@ def main_game():
         print(f"{Style.BRIGHT}{spanish_word}")
         answer = input().lower()
         if answer == english_word:
-            print(Fore.GREEN + "Correct")
+            print("")
+            print(f"{Fore.GREEN}Correct")
             score += 1
-            print(f'lives = {lives}')
-            print(f'score = {score}')
+            print(f'lives: {lives}')
+            print(f'score: {score}')
             print(Fore.YELLOW + "-----------------")
         else:
+            print("")
             print(f'{Fore.RED}Incorrect')
-            print(f"the answer is {Fore.YELLOW}{english_word}")
+            print(f"The answer is {Fore.YELLOW}{english_word}")
             lives -= 1
-            print(f'lives = {lives}')
-            print(f'score = {score}')
+            print(f'lives: {lives}')
+            print(f'score: {score}')
             print(Fore.YELLOW + "-----------------")
 
     finished(lives, score)
@@ -136,11 +134,10 @@ def start_game():
     or want to see the set of game rules.
     '''
     print("")
-    print(f"{Fore.YELLOW}***********WELCOME TO THE************")
-    print("")
-    print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********")
-    print("")
-    print("Would you like to see the rules before you start the game?")
+    print(f"{Fore.YELLOW}***********WELCOME TO THE************\n")
+    print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
+    print(f"Have fun and learn!!!\n")
+    print(f"Would you like to see the rules before you start the game?")
     question(rules, main_game)
 
 
