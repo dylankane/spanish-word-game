@@ -96,37 +96,38 @@ def main_game():
     translate it and compare their answer to the matching english word.
     Keeps score count and lives counter, to determine the end of game
     '''
+    print("")
+    print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
+    print(f"{Fore.RED}OK Here We Go!!!\n")
+    print(f"Type the translation to the following words\n")
+
     lives = 3
     score = 0
     word_list = copy.deepcopy(WORDS)
-    print("")
-    print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
-    print(f"{Fore.MAGENTA} OK Here We Go!!!\n\n")
-    print(f"Type the translation to the following words\n")
-    print(Fore.YELLOW + "-----------------")
+    random.shuffle(word_list)
 
     while lives > 0 and score < 3:
-        random.shuffle(word_list)
         word = word_list.pop(0)
         english_word = word['english']
         spanish_word = word['spanish']
+        print(f"{Fore.YELLOW}-----------------")
         print(f"{Style.BRIGHT}{spanish_word}")
         answer = input().lower()
         if answer == english_word:
+            score += 1
             print("")
             print(f"{Fore.GREEN}Correct")
-            score += 1
             print(f'lives: {lives}')
             print(f'score: {score}')
-            print(Fore.YELLOW + "-----------------")
+            print(f"{Fore.YELLOW}-----------------")
         else:
+            lives -= 1
             print("")
             print(f'{Fore.RED}Incorrect')
             print(f"The answer is {Fore.YELLOW}{english_word}")
-            lives -= 1
             print(f'lives: {lives}')
             print(f'score: {score}')
-            print(Fore.YELLOW + "-----------------")
+            print(f"{Fore.YELLOW}-----------------")
 
     finished(lives, score)
 
