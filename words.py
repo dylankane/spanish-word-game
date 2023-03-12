@@ -200,3 +200,208 @@ WORDS = [
         "spanish": "pan"
     }
 ]
+
+WORDS_HARD = [
+    {
+        "english": "spoon",
+        "spanish": "cuchara"
+    },
+    {
+        "english": "waistcoat",
+        "spanish": "chaleco"
+    },
+    {
+        "english": "van",
+        "spanish": "furgoneta"
+    },
+    {
+        "english": "priest",
+        "spanish": "sacerdote"
+    },
+    {
+        "english": "fish",
+        "spanish": "pescado"
+    },
+    {
+       "english": "spring",
+       "spanish": "primavera"
+    },
+    {
+       "english": "snake",
+       "spanish": "serpiente"
+    },
+    {
+       "english": "head",
+       "spanish": "cabeza"
+    },
+    {
+       "english": "roof",
+       "spanish": "tejado"
+    },
+    {
+       "english": "pool",
+       "spanish": "piscina"
+    },
+    {
+       "english": "road",
+       "spanish": "carretera"
+    },
+    {
+       "english": "knife",
+       "spanish": "cuchillo"
+    },
+    {
+       "english": "mushrooms",
+       "spanish": "champiñones"
+    },
+    {
+       "english": "parasol",
+       "spanish": "sombrilla"
+    },
+    {
+       "english": "hip",
+       "spanish": "cadera"
+    },
+    {
+       "english": "window",
+       "spanish": "ventana"
+    },
+    {
+       "english": "storm",
+       "spanish": "tormenta"
+    },
+    {
+       "english": "computer",
+       "spanish": "ordenador"
+    },
+    {
+       "english": "butcher",
+       "spanish": "carnicero"
+    },
+    {
+       "english": "trousers",
+       "spanish": "pantalones"
+    },
+    {
+       "english": "school",
+       "spanish": "escuela"
+    },
+    {
+       "english": "scooter",
+       "spanish": "patinete"
+    },
+    {
+       "english": "star",
+       "spanish": "estrella"
+    },
+    {
+       "english": "fork",
+       "spanish": "tenedor"
+    },
+    {
+       "english": "bird",
+       "spanish": "pajaro"
+    },
+    {
+       "english": "film",
+       "spanish": "pelicula"
+    },
+    {
+       "english": "shirt",
+       "spanish": "camisa"
+    },
+    {
+       "english": "twins",
+       "spanish": "mellizos"
+    },
+    {
+       "english": "flag",
+       "spanish": "bandera"
+    },
+    {
+       "english": "banana",
+       "spanish": "platano"
+    },
+    {
+       "english": "washing machine",
+       "spanish": "lavadora"
+    },
+    {
+       "english": "peach",
+       "spanish": "melocoton"
+    },
+    {
+       "english": "forty",
+       "spanish": "cuarenta"
+    },
+    {
+       "english": "mussels",
+       "spanish": "mejillones"
+    },
+    {
+       "english": "dishwasher",
+       "spanish": "lavavajillas"
+    },
+    {
+       "english": "stage",
+       "spanish": "escenario"
+    },
+    {
+       "english": "popcorn",
+       "spanish": "palomitas"
+    },
+    {
+       "english": "work",
+       "spanish": "trabajo"
+    },
+    {
+       "english": "marriage",
+       "spanish": "matrimonio"
+    },
+    {
+       "english": "heart",
+       "spanish": "corazon"
+    },
+    {
+       "english": "hell",
+       "spanish": "infierno"
+    },
+    {
+       "english": "butterfly",
+       "spanish": "mariposa"
+    },
+    {
+       "english": "lost",
+       "spanish": "perdido"
+    },
+    {
+       "english": "deep",
+       "spanish": "profundo"
+    },
+    {
+       "english": "shocks",
+       "spanish": "calcetines"
+    },
+    {
+       "english": "elevator",
+       "spanish": "ascensor"
+    },
+    {
+       "english": "bottle",
+       "spanish": "botella"
+    },
+    {
+       "english": "sport",
+       "spanish": "deporte"
+    },
+    {
+       "english": "lawyer",
+       "spanish": "abogado"
+    },
+    {
+       "english": "almond",
+       "spanish": "almendra"
+    },
+  
+
+]
