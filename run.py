@@ -34,11 +34,12 @@ def you_lose(x, y):
     '''
     lives = x
     score = y
-    print(f'{Fore.RED}GAMEOVER')
-    print(f"Good try but you ran out of lives")
-    print(f'{Fore.GREEN}You scored {score}')
+    print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
+    print(f"{Fore.RED}GAMEOVER\n")
+    print(f"Good try, but you ran out of lives")
+    print(f"{Fore.GREEN}You scored {score}\n")
     print(f"Would you like to start a new game now?")
-    question(main_game, start_game)
+    question(difficulty, start_game)
 
 
 def you_win(x, y):
@@ -48,12 +49,13 @@ def you_win(x, y):
     '''
     lives = x
     score = y
+    print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
     print(f"{Fore.GREEN}CONGRATULATIONS\n")
-    print(f'{Fore.GREEN}You scored {score}')
+    print(f"{Fore.GREEN}You scored {score}")
     print(f"With {lives} lives left")
     print(f"Well done!!!\n")
     print(f"Would you like to start a new game now?")
-    question(main_game, start_game)
+    question(difficulty, start_game)
 
 
 def finished(x, y):
@@ -79,6 +81,9 @@ def rules():
     print("")
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
     print(f"{Back.YELLOW}-----------The Rules-----------")
+    print("-First choose your difficulty level, easy or hard")
+    print("-Easy will ask you to translate shorter well known spanish words")
+    print("-Hard will ask you to translate longer more difficult words")
     print("-Start your game, and you will be given a Spanish word")
     print("-Just type the english translation for this word")
     print("-You have 3 lives to complete the game")
@@ -87,7 +92,7 @@ def rules():
     print("-If your answer is incorrect the correct answer will be shown")
     print(f"-Have fun and learn !!!\n\n")
     print(f"Would you like to start the game now?")
-    question(main_game, start_game)
+    question(difficulty, start_game)
 
 
 def main_game(list):
@@ -136,16 +141,18 @@ def main_game(list):
 def difficulty():
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
     print(f"What difficulty level would you like to play")
-    print(f"{Fore.YELLOW}Easy{Fore.RESET} or {Fore.YELLOW}Hard")
+    print(f"{Fore.YELLOW}Easy{Fore.RESET} or {Fore.YELLOW}Hard\n")
     print(f"Type {Fore.YELLOW}[E]{Fore.RESET} for Easy")
-    print(f"Or type{Fore.YELLOW}[H]{Fore.RESET} for Hard\n")
+    print(f"Type {Fore.YELLOW}[H]{Fore.RESET} for Hard\n")
 
     while True:
-        user_dif = input(f"{Fore.YELLOW}[E/H]\n").upper()
+        user_dif = input(f"{Fore.YELLOW}[E/H]{Fore.RESET}\n").upper()
         if user_dif == "E":
-            main_game(WORDS)
+            os.system('cls' if os.name == 'nt' else 'clear')
+            main_game(WORDS,)
         elif user_dif == "H":
-            main_game(WORDS_HARD)
+            os.system('cls' if os.name == 'nt' else 'clear')
+            main_game(WORDS_HARD,)
         else:
             print(f"Invalid entry, please type 'E' for Easy or 'H' for Hard")
 
@@ -164,15 +171,3 @@ def start_game():
 
 
 start_game()
-
-
-# print(f'''
-#     What difficulty level would you like to play\n
-#     {Fore.YELLOW}Easy{Fore.RESET} or {Fore.YELLOW}Hard\n
-#     Type {Fore.YELLOW}[E]{Fore.RESET} for Easy, or
-#     {Fore.YELLOW}[H]{Fore.RESET} for hard
-#     ''')
-#     print(f"What difficulty level would you like to play")
-#     print(f"{Fore.YELLOW}Easy{Fore.RESET} or {Fore.YELLOW}Hard")
-#     print(f"Type {Fore.YELLOW}[E]{Fore.RESET} for Easy")
-#     print(f"Or type{Fore.YELLOW}[H]{Fore.RESET} for Hard\n")
