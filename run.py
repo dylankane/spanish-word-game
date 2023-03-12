@@ -1,4 +1,5 @@
 import os
+import time
 import copy
 import random
 from words import WORDS
@@ -80,7 +81,7 @@ def rules():
     '''
     print("")
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
-    print(f"{Back.YELLOW}-----------The Rules-----------")
+    print(f"{Back.YELLOW}-----------The Rules-----------\n")
     print("-First choose your difficulty level, easy or hard")
     print("-Easy will ask you to translate shorter well known spanish words")
     print("-Hard will ask you to translate longer more difficult words")
@@ -90,7 +91,7 @@ def rules():
     print("-Each correct translation is 1 point")
     print("-Score 20 points to win")
     print("-If your answer is incorrect the correct answer will be shown")
-    print(f"-Have fun and learn !!!")
+    print(f"-Have fun and learn !!!\n")
     print(f"{Back.YELLOW}-------------------------------\n\n")
     print(f"Would you like to start the game now?")
     question(difficulty, start_game)
@@ -129,6 +130,11 @@ def main_game(list, level):
             print(f"{Fore.GREEN}lives: {lives}")
             print(f"{Fore.GREEN}score: {score}")
             print(f"{Fore.YELLOW}-----------------")
+            time.sleep(2)
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(f"{Fore.YELLOW}---------------------")
+            print(f"{Fore.YELLOW}lives: {lives}    score: {score}")
+            print(f"{Fore.YELLOW}---------------------\n")
         else:
             lives -= 1
             print("")
@@ -137,6 +143,11 @@ def main_game(list, level):
             print(f'{Fore.RED}score: {score}')
             print(f"{Fore.YELLOW}The answer is {Fore.RESET}{english_word}")
             print(f"{Fore.YELLOW}-----------------")
+            time.sleep(2)
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print(f"{Fore.YELLOW}---------------------")
+            print(f"{Fore.YELLOW}lives: {lives}    score: {score}")
+            print(f"{Fore.YELLOW}---------------------\n")
 
     finished(lives, score)
 
