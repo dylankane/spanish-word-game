@@ -39,6 +39,7 @@ def you_lose(x, y):
     print(f"{Fore.RED}GAMEOVER\n")
     print(f"{Fore.RED}Good try, but you ran out of lives")
     print(f"{Fore.RED}You scored: {score}\n")
+    time.sleep(1.5)
     print(f"Would you like to start a new game now?")
     question(difficulty, start_game)
 
@@ -55,6 +56,7 @@ def you_win(x, y):
     print(f"{Fore.GREEN}You scored: {score}")
     print(f"{Fore.GREEN}With {lives} lives left")
     print(f"{Fore.GREEN}Well done!!!\n")
+    time.sleep(1.5)
     print(f"Would you like to start a new game now?")
     question(difficulty, start_game)
 
@@ -81,6 +83,7 @@ def rules():
     '''
     print("")
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
+    time.sleep(1.5)
     print(f"{Back.YELLOW}-----------The Rules-----------\n")
     print("-First choose your difficulty level, easy or hard")
     print("-Easy will ask you to translate shorter well known spanish words")
@@ -93,6 +96,7 @@ def rules():
     print("-If your answer is incorrect the correct answer will be shown")
     print(f"-Have fun and learn !!!\n")
     print(f"{Back.YELLOW}-------------------------------\n\n")
+    time.sleep(2)
     print(f"Would you like to start the game now?")
     question(difficulty, start_game)
 
@@ -106,11 +110,13 @@ def main_game(list, level):
     '''
     print("")
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
+    time.sleep(1.5)
     print(f"{Fore.RESET}You chose dificulty level: {Fore.YELLOW}{level}\n")
-    print(f"OK Here We Go!!!\n")
     print(f"Type the translation for the following words\n")
+    print(f"OK Here We Go!!!\n")
     print(f"{Fore.YELLOW}-----------------")
-    print(f"{Fore.YELLOW}-----------------")
+    time.sleep(4)
+    os.system('cls' if os.name == 'nt' else 'clear')
 
     lives = 3
     score = 0
@@ -121,41 +127,36 @@ def main_game(list, level):
         word = word_list.pop(0)
         english_word = word['english']
         spanish_word = word['spanish']
+        print(f"{Fore.YELLOW}---------------------")
+        print(f"{Fore.YELLOW}lives: {lives}    score: {score}")
+        print(f"{Fore.YELLOW}---------------------\n")
         print(f"{Style.BRIGHT}{spanish_word}")
         answer = input().lower()
         if answer == english_word:
             score += 1
             print("")
             print(f"{Fore.GREEN}Correct")
-            print(f"{Fore.GREEN}lives: {lives}")
-            print(f"{Fore.GREEN}score: {score}")
             print(f"{Fore.YELLOW}-----------------")
             time.sleep(2)
             os.system('cls' if os.name == 'nt' else 'clear')
-            print(f"{Fore.YELLOW}---------------------")
-            print(f"{Fore.YELLOW}lives: {lives}    score: {score}")
-            print(f"{Fore.YELLOW}---------------------\n")
         else:
             lives -= 1
             print("")
             print(f'{Fore.RED}Incorrect')
-            print(f'{Fore.RED}lives: {lives}')
-            print(f'{Fore.RED}score: {score}')
             print(f"{Fore.YELLOW}The answer is {Fore.RESET}{english_word}")
             print(f"{Fore.YELLOW}-----------------")
-            time.sleep(2)
+            time.sleep(2.5)
             os.system('cls' if os.name == 'nt' else 'clear')
-            print(f"{Fore.YELLOW}---------------------")
-            print(f"{Fore.YELLOW}lives: {lives}    score: {score}")
-            print(f"{Fore.YELLOW}---------------------\n")
 
     finished(lives, score)
 
 
 def difficulty():
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
+    time.sleep(1.5)
     print(f"What difficulty level would you like to play")
     print(f"Easy or Hard\n")
+    time.sleep(1.5)
     print(f"Type {Fore.YELLOW}[E]{Fore.RESET} for Easy")
     print(f"Type {Fore.YELLOW}[H]{Fore.RESET} for Hard\n")
 
@@ -178,8 +179,11 @@ def start_game():
     '''
     print("")
     print(f"{Fore.YELLOW}***********WELCOME TO THE************\n")
+    time.sleep(1.5)
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
-    print(f"Have fun and learn!!!\n")
+    time.sleep(1.5)
+    print(f"{Fore.YELLOW}**Play a game and learn some Spanish**\n")
+    time.sleep(1.5)
     print(f"Would you like to see the rules before you start the game?")
     question(rules, difficulty)
 
