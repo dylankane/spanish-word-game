@@ -36,8 +36,8 @@ def you_lose(x, y):
     score = y
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
     print(f"{Fore.RED}GAMEOVER\n")
-    print(f"Good try, but you ran out of lives")
-    print(f"{Fore.GREEN}You scored {score}\n")
+    print(f"{Fore.RED}Good try, but you ran out of lives")
+    print(f"{Fore.RED}You scored: {score}\n")
     print(f"Would you like to start a new game now?")
     question(difficulty, start_game)
 
@@ -51,9 +51,9 @@ def you_win(x, y):
     score = y
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
     print(f"{Fore.GREEN}CONGRATULATIONS\n")
-    print(f"{Fore.GREEN}You scored {score}")
-    print(f"With {lives} lives left")
-    print(f"Well done!!!\n")
+    print(f"{Fore.GREEN}You scored: {score}")
+    print(f"{Fore.GREEN}With {lives} lives left")
+    print(f"{Fore.GREEN}Well done!!!\n")
     print(f"Would you like to start a new game now?")
     question(difficulty, start_game)
 
@@ -90,12 +90,13 @@ def rules():
     print("-Each correct translation is 1 point")
     print("-Score 20 points to win")
     print("-If your answer is incorrect the correct answer will be shown")
-    print(f"-Have fun and learn !!!\n\n")
+    print(f"-Have fun and learn !!!")
+    print(f"{Back.YELLOW}-------------------------------\n\n")
     print(f"Would you like to start the game now?")
     question(difficulty, start_game)
 
 
-def main_game(list):
+def main_game(list, level):
     '''
     Gets a random set of translations from a list of dictionaries in words.py.
     Prints out one spanish word using its dictionary key. Prompts the user to
@@ -104,8 +105,10 @@ def main_game(list):
     '''
     print("")
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
-    print(f"{Fore.RED}OK Here We Go!!!\n")
-    print(f"Type the translation to the following words\n")
+    print(f"{Fore.RESET}You chose dificulty level: {Fore.YELLOW}{level}\n")
+    print(f"OK Here We Go!!!\n")
+    print(f"Type the translation for the following words\n")
+    print(f"{Fore.YELLOW}-----------------")
     print(f"{Fore.YELLOW}-----------------")
 
     lives = 3
@@ -123,16 +126,16 @@ def main_game(list):
             score += 1
             print("")
             print(f"{Fore.GREEN}Correct")
-            print(f'lives: {lives}')
-            print(f'score: {score}')
+            print(f"{Fore.GREEN}lives: {lives}")
+            print(f"{Fore.GREEN}score: {score}")
             print(f"{Fore.YELLOW}-----------------")
         else:
             lives -= 1
             print("")
             print(f'{Fore.RED}Incorrect')
-            print(f"The answer is {Fore.YELLOW}{english_word}")
-            print(f'lives: {lives}')
-            print(f'score: {score}')
+            print(f'{Fore.RED}lives: {lives}')
+            print(f'{Fore.RED}score: {score}')
+            print(f"{Fore.YELLOW}The answer is {Fore.RESET}{english_word}")
             print(f"{Fore.YELLOW}-----------------")
 
     finished(lives, score)
@@ -141,7 +144,7 @@ def main_game(list):
 def difficulty():
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
     print(f"What difficulty level would you like to play")
-    print(f"{Fore.YELLOW}Easy{Fore.RESET} or {Fore.YELLOW}Hard\n")
+    print(f"Easy or Hard\n")
     print(f"Type {Fore.YELLOW}[E]{Fore.RESET} for Easy")
     print(f"Type {Fore.YELLOW}[H]{Fore.RESET} for Hard\n")
 
@@ -149,10 +152,10 @@ def difficulty():
         user_dif = input(f"{Fore.YELLOW}[E/H]{Fore.RESET}\n").upper()
         if user_dif == "E":
             os.system('cls' if os.name == 'nt' else 'clear')
-            main_game(WORDS,)
+            main_game(WORDS, "Easy")
         elif user_dif == "H":
             os.system('cls' if os.name == 'nt' else 'clear')
-            main_game(WORDS_HARD,)
+            main_game(WORDS_HARD, "Hard")
         else:
             print(f"Invalid entry, please type 'E' for Easy or 'H' for Hard")
 
