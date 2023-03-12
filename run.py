@@ -90,7 +90,7 @@ def rules():
     question(main_game, start_game)
 
 
-def main_game():
+def main_game(list):
     '''
     Gets a random set of translations from a list of dictionaries in words.py.
     Prints out one spanish word using its dictionary key. Prompts the user to
@@ -101,17 +101,17 @@ def main_game():
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
     print(f"{Fore.RED}OK Here We Go!!!\n")
     print(f"Type the translation to the following words\n")
+    print(f"{Fore.YELLOW}-----------------")
 
     lives = 3
     score = 0
-    word_list = copy.deepcopy(WORDS)
+    word_list = copy.deepcopy(list)
     random.shuffle(word_list)
 
     while lives > 0 and score < 3:
         word = word_list.pop(0)
         english_word = word['english']
         spanish_word = word['spanish']
-        print(f"{Fore.YELLOW}-----------------")
         print(f"{Style.BRIGHT}{spanish_word}")
         answer = input().lower()
         if answer == english_word:
@@ -134,15 +134,18 @@ def main_game():
 
 
 def difficulty():
-    print("What difficulty level would you like to play")
-    print("Easy or Hard")
-    print(f"Type {Fore.YELLOW}[E] for Easy, or {Fore.YELLOW}[H] for Hard\n")
+    print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
+    print(f"What difficulty level would you like to play")
+    print(f"{Fore.YELLOW}Easy{Fore.RESET} or {Fore.YELLOW}Hard")
+    print(f"Type {Fore.YELLOW}[E]{Fore.RESET} for Easy")
+    print(f"Or type{Fore.YELLOW}[H]{Fore.RESET} for Hard\n")
+
     while True:
-        user_dif = input().upper
+        user_dif = input(f"{Fore.YELLOW}[E/H]\n").upper()
         if user_dif == "E":
-            main_game(easy)
+            main_game(WORDS)
         elif user_dif == "H":
-            main_game(hard)
+            main_game(WORDS_HARD)
         else:
             print(f"Invalid entry, please type 'E' for Easy or 'H' for Hard")
 
@@ -161,3 +164,15 @@ def start_game():
 
 
 start_game()
+
+
+# print(f'''
+#     What difficulty level would you like to play\n
+#     {Fore.YELLOW}Easy{Fore.RESET} or {Fore.YELLOW}Hard\n
+#     Type {Fore.YELLOW}[E]{Fore.RESET} for Easy, or
+#     {Fore.YELLOW}[H]{Fore.RESET} for hard
+#     ''')
+#     print(f"What difficulty level would you like to play")
+#     print(f"{Fore.YELLOW}Easy{Fore.RESET} or {Fore.YELLOW}Hard")
+#     print(f"Type {Fore.YELLOW}[E]{Fore.RESET} for Easy")
+#     print(f"Or type{Fore.YELLOW}[H]{Fore.RESET} for Hard\n")

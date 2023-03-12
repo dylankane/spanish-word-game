@@ -402,6 +402,4 @@ WORDS_HARD = [
        "english": "almond",
        "spanish": "almendra"
     },
-  
-
 ]
