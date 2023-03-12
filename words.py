@@ -379,7 +379,7 @@ WORDS_HARD = [
        "spanish": "profundo"
     },
     {
-       "english": "shocks",
+       "english": "socks",
        "spanish": "calcetines"
     },
     {
