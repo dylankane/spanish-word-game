@@ -2,6 +2,7 @@ import os
 import copy
 import random
 from words import WORDS
+from words import WORDS_HARD
 import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
@@ -94,7 +95,7 @@ def main_game():
     Gets a random set of translations from a list of dictionaries in words.py.
     Prints out one spanish word using its dictionary key. Prompts the user to
     translate it and compare their answer to the matching english word.
-    Keeps score count and lives counter, to determine the end of game
+    Keeps score counter and lives counter, to determine the end of game
     '''
     print("")
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
@@ -132,6 +133,20 @@ def main_game():
     finished(lives, score)
 
 
+def difficulty():
+    print("What difficulty level would you like to play")
+    print("Easy or Hard")
+    print(f"Type {Fore.YELLOW}[E] for Easy, or {Fore.YELLOW}[H] for Hard\n")
+    while True:
+        user_dif = input().upper
+        if user_dif == "E":
+            main_game(easy)
+        elif user_dif == "H":
+            main_game(hard)
+        else:
+            print(f"Invalid entry, please type 'E' for Easy or 'H' for Hard")
+
+
 def start_game():
     '''
     Function to ask user if they are ready to start the game,
@@ -142,7 +157,7 @@ def start_game():
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
     print(f"Have fun and learn!!!\n")
     print(f"Would you like to see the rules before you start the game?")
-    question(rules, main_game)
+    question(rules, difficulty)
 
 
 start_game()
