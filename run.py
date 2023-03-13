@@ -2,12 +2,19 @@ import os
 import time
 import copy
 import random
-from words import WORDS
-from words import WORDS_HARD
+from words import WORDS, WORDS_HARD
 import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
+
+class Game():
+    '''
+    Game object with game progress
+    '''
+    def __init__(self):
+        self.score = 0
+        self.lives = 3
 
 
 def clear():
@@ -15,6 +22,7 @@ def clear():
     Function to clear terminal screen
     '''
     os.system('cls' if os.name == 'nt' else 'clear')
+
 
 def question(x, y):
     '''
@@ -35,52 +43,45 @@ def question(x, y):
             print(f"Invalid entry, please type 'Y' for yes or 'N' for no")
 
 
-def you_lose(x, y):
+def you_lose(game):
     '''
     Function to handle when the user runs out of lives. Displays scores, and
     directs them back to the game.
     '''
-    lives = x
-    score = y
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
     print(f"{Fore.RED}GAMEOVER\n")
     print(f"{Fore.RED}Good try, but you ran out of lives")
-    print(f"{Fore.RED}You scored: {score}\n")
-    time.sleep(1.5)
-    print(f"Would you like to start a new game now?")
-    question(difficulty, start_game)
+    print(f"{Fore.RED}You scored: {game.score}\n")
 
 
-def you_win(x, y):
+def you_win(game):
     '''
     Function to handle when the user completes the game.
     Displays, score and lives. Directs them back to the game.
     '''
-    lives = x
-    score = y
     print(f"{Fore.YELLOW}**********SPANISH WORD GAME**********\n")
     print(f"{Fore.GREEN}CONGRATULATIONS\n")
-    print(f"{Fore.GREEN}You scored: {score}")
-    print(f"{Fore.GREEN}With {lives} lives left")
+    print(f"{Fore.GREEN}You scored: {game.score}")
+    print(f"{Fore.GREEN}With {game.lives} lives left")
     print(f"{Fore.GREEN}Well done!!!\n")
-    time.sleep(1.5)
-    print(f"Would you like to start a new game now?")
-    question(difficulty, start_game)
 
 
-def finished(x, y):
+def finished(game):
     '''
     Function to handle the score vs lives counters, when game ends, to decide
     where to send them,to the you_win or you_lose functions
     '''
-    lives = x
-    score = y
-    if x <= 0:
-        os.system('cls' if os.name == 'nt' else 'clear')
-        you_lose(lives, score)
-    elif y >= 3:
-        os.system('cls' if os.name == 'nt' else 'clear')
-        you_win(lives, score)
+    if game.lives <= 0:
+        clear()
+        you_lose(game)
+    elif game.score >= 3:
+        clear()
+        you_win(game)
+    time.sleep(1.5)
+    print(f"Would you like to start a new game now?")
+    game.score = 0
+    game.lives = 3
+    question(difficulty, start_game)
 
 
 def rules():
@@ -125,29 +126,28 @@ def main_game(list, level):
     time.sleep(4)
     clear()
 
-    lives = 3
-    score = 0
+    game = Game()
     word_list = copy.deepcopy(list)
     random.shuffle(word_list)
 
-    while lives > 0 and score < 3:
+    while game.lives > 0 and game.score < 3:
         word = word_list.pop(0)
         english_word = word['english']
         spanish_word = word['spanish']
         print(f"{Fore.YELLOW}---------------------")
-        print(f"{Fore.YELLOW}lives: {lives}    score: {score}")
+        print(f"{Fore.YELLOW}lives: {game.lives}    score: {game.score}")
         print(f"{Fore.YELLOW}---------------------\n")
         print(f"{Style.BRIGHT}{spanish_word}")
         answer = input().lower()
         if answer == english_word:
-            score += 1
+            game.score += 1
             print("")
             print(f"{Fore.GREEN}Correct")
             print(f"{Fore.YELLOW}-----------------")
             time.sleep(2)
             clear()
         else:
-            lives -= 1
+            game.lives -= 1
             print("")
             print(f'{Fore.RED}Incorrect')
             print(f"{Fore.YELLOW}The answer is {Fore.RESET}{english_word}")
@@ -155,7 +155,7 @@ def main_game(list, level):
             time.sleep(2.5)
             clear()
 
-    finished(lives, score)
+    finished(game)
 
 
 def difficulty():
