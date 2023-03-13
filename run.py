@@ -9,6 +9,13 @@ from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
 
+
+def clear():
+    '''
+    Function to clear terminal screen
+    '''
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 def question(x, y):
     '''
     Function to ask the user a [y/n] question, which takes functions as
@@ -22,7 +29,7 @@ def question(x, y):
             os.system('cls' if os.name == 'nt' else 'clear')
             func_1()
         elif user == "N":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear()
             func_2()
         else:
             print(f"Invalid entry, please type 'Y' for yes or 'N' for no")
@@ -116,7 +123,7 @@ def main_game(list, level):
     print(f"OK Here We Go!!!\n")
     print(f"{Fore.YELLOW}-----------------")
     time.sleep(4)
-    os.system('cls' if os.name == 'nt' else 'clear')
+    clear()
 
     lives = 3
     score = 0
@@ -138,7 +145,7 @@ def main_game(list, level):
             print(f"{Fore.GREEN}Correct")
             print(f"{Fore.YELLOW}-----------------")
             time.sleep(2)
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear()
         else:
             lives -= 1
             print("")
@@ -146,7 +153,7 @@ def main_game(list, level):
             print(f"{Fore.YELLOW}The answer is {Fore.RESET}{english_word}")
             print(f"{Fore.YELLOW}-----------------")
             time.sleep(2.5)
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear()
 
     finished(lives, score)
 
@@ -163,10 +170,10 @@ def difficulty():
     while True:
         user_dif = input(f"{Fore.YELLOW}[E/H]{Fore.RESET}\n").upper()
         if user_dif == "E":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear()
             main_game(WORDS, "Easy")
         elif user_dif == "H":
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear()
             main_game(WORDS_HARD, "Hard")
         else:
             print(f"Invalid entry, please type 'E' for Easy or 'H' for Hard")
