@@ -32,7 +32,7 @@ def question(x, y):
     func_1 = x
     func_2 = y
     while True:
-        user = input(f" {Fore.YELLOW}[Y/N]{Fore.RESET}\n").upper()
+        user = input(f" {Fore.YELLOW}[Y/N]{Fore.RESET}\n ").upper()
         if user == "Y":
             os.system('cls' if os.name == 'nt' else 'clear')
             func_1()
@@ -49,9 +49,9 @@ def you_lose(game):
     directs them back to the game.
     '''
     print(f" {Fore.YELLOW}**********SPANISH WORD GAME**********\n")
-    print(f" {Fore.RED}{Fore.BRIGHT}GAMEOVER\n")
-    print(f" {Fore.RED}{Fore.BRIGHT}Good try, but you ran out of lives")
-    print(f" {Fore.RED}{Fore.BRIGHT}You scored: {game.score}\n")
+    print(f" {Fore.RED}{Style.BRIGHT}GAMEOVER\n")
+    print(f" {Fore.RED}{Style.BRIGHT}Good try, but you ran out of lives")
+    print(f" {Fore.RED}{Style.BRIGHT}You scored: {game.score}\n")
 
 
 def you_win(game):
@@ -60,10 +60,10 @@ def you_win(game):
     Displays, score and lives. Directs them back to the game.
     '''
     print(f" {Fore.YELLOW}**********SPANISH WORD GAME**********\n")
-    print(f" {Fore.GREEN}{Fore.BRIGHT}CONGRATULATIONS\n")
-    print(f" {Fore.GREEN}{Fore.BRIGHT}You scored: {game.score}")
-    print(f" {Fore.GREEN}{Fore.BRIGHT}With {game.lives} lives left")
-    print(f" {Fore.GREEN}Well done!!!\n")
+    print(f" {Fore.GREEN}{Style.BRIGHT}CONGRATULATIONS\n")
+    print(f" {Fore.GREEN}{Style.BRIGHT}You scored: {game.score}")
+    print(f" {Fore.GREEN}{Style.BRIGHT}With {game.lives} lives left")
+    print(f" {Fore.GREEN}{Style.BRIGHT}Well done!!!\n")
 
 
 def finished(game):
@@ -105,7 +105,7 @@ def rules():
     print(f" -Have fun and learn !!!\n")
     print(f" {Back.YELLOW}-------------------------------\n\n")
     time.sleep(2)
-    print(f"Would you like to start the game now?")
+    print(f" Would you like to start the game now?")
     question(difficulty, start_game)
 
 
@@ -138,18 +138,18 @@ def main_game(list, level):
         print(f" {Fore.YELLOW}lives: {game.lives}    score: {game.score}")
         print(f" {Fore.YELLOW}---------------------\n")
         print(f" {Style.BRIGHT}{spanish_word}")
-        answer = input().lower()
+        answer = input(f"\n ").lower()
         if answer == english_word:
             game.score += 1
             print("")
-            print(f" {Fore.GREEN}{Fore.BRIGHT}Correct")
+            print(f" {Fore.GREEN}{Style.BRIGHT}Correct")
             print(f" {Fore.YELLOW}-----------------")
             time.sleep(2)
             clear()
         else:
             game.lives -= 1
             print("")
-            print(f" {Fore.RED}{Fore.BRIGHT}Incorrect")
+            print(f" {Fore.RED}{Style.BRIGHT}Incorrect")
             print(f" {Fore.YELLOW}The answer is {Fore.RESET}{english_word}")
             print(f" {Fore.YELLOW}-----------------")
             time.sleep(2.5)
@@ -168,7 +168,7 @@ def difficulty():
     print(f" Type {Fore.YELLOW}[H]{Fore.RESET} for Hard\n")
 
     while True:
-        user_dif = input(f"{Fore.YELLOW}[E/H]{Fore.RESET}\n").upper()
+        user_dif = input(f" {Fore.YELLOW}[E/H]{Fore.RESET}\n ").upper()
         if user_dif == "E":
             clear()
             main_game(WORDS, "Easy")
