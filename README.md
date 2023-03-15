@@ -4,7 +4,7 @@
 ![screenshot](documentation/mockup.png)
 
 
-Welcome to the Spanish Word Game.
+## Welcome to the Spanish Word Game ##
 
 This is a game written in the Python programming language, it is a terminal-based language word game. Its main purpose is to aid in the learning of new Spanish words while playing a game. Adding competitiveness, and gaming aspects to learning. It helps to increase general vocabulary knowledge, not testing on the specifics of grammar.
 
@@ -35,58 +35,58 @@ the text appeares at time intervals, giving the flowing feel of the game.
 
 ### Existing Features
 
-- **Landing Area**
+- **Start Game**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - Here is where the application begins. The title and sub title, appear one after each other with a short delay between them. Finally showing a question, asking the user if they would like to see the rules brfore beginning the game. This is a y/n question, that prompts the user to type y or n. If y is typed the terminal is cleared, and the rules funtion is called. If N is typed the terminal is cleared, and the difficulty function is called.
 
 ![screenshot](documentation/feature01.png)
 
 - **Game Rules**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - If the player chooses to see the rules, the cleared terminal shows the game title, with a delay, then a list of the game rules followed by a question after. This question is also y/n. Controlled by the question function. They are asked if they are ready to start a game. Y will call the difficulty function, while n will call back to the start_game function.
 
 ![screenshot](documentation/feature02.png)
 
 - **Difficulty Level**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    -Here the player is asked what difficulty game level they would like to play, easy or hard. This also has a delay applied to the printing of the output text. This question is answered with the keys E or H, for easy or hard. Both options call the main game function but with the parameter of what level is chosen.
 
 ![screenshot](documentation/feature03.png)
 
 - **Main game**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - This is where the main logic of the game takes place. The user is notified what level they chose, and told the game is beginning. After a delay the terminal is cleared again and the lives counter and score counter is printed to the top of the terminal, and stays ther while the game is in progress, been updated as the game continues. The first spanish word is printed. The user then types the translation, and presses enter. If correct the word correct is printed in green and the counters are updated. If incorrect the word incorrect, is printed in red, and the correct anwer is also printed. there is a delay and then the terminal is cleared bar the counters, and a new word is printed. The correct answer when the user is incorrect is displayed longer before the termonal is cleared to give them a chance to read and notethe correct answer. This game logic contiues in a while loop, until either the score reaches 20 or the lives counter goes below 0, by getting 3 wrong answers. The finshed function is then called.
 
 ![screenshot](documentation/feature03.png)
 
-- ****
+- **Finished game**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - This function takes the parameters of the game class (score and lives), to deal with the decision of whether the player has won or lost, which then calls the win or loose game functions. These then print the, you have won or lost statements and show the stats of the game, using the game class again. Both outcomes will then prompt the user do either start a new game or return to the very beginning of the application, with another Y/N question.
 
 ![screenshot](documentation/feature03.png)
 
 - **Score and Lives Counters**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - The score and lives stats of the current game is stored, controlled and passed to other functions by the game class. Throughout the gameplay these numbers are displayed at the head of the terminal and updated after each answer.
 
 ![screenshot](documentation/feature03.png)
 
 
 - **Question Function**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - This function was built to deal with nearly all the questions prompted to the user to anwer throughout the game. Its purose is to reduce the amount of repition of code. Any y/n question is prefromed by this one function. the function is called with parameters, that tell the function what other functions to call depending on the answer of the user. This greatly helped to refactor the code, in all the other functions.
 
 ![screenshot](documentation/feature03.png)
 
 - **Game Class**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - This class was built to globaly handle the scores and lives counters, in the game. Allowing me to pass these stats to different areas in the code. Again helping to reduce the amount of the code and repitition throughout run.py file.
 
 ![screenshot](documentation/feature03.png)
 
 - **Difficulty Level**
 
-    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+    - This area is where the user decides what game level they want to play at. The terminal prints the question, giving two options, selected by typing one of two letters. "E for easy or "H" for hard. Like all the other user inputs in the applicatio only these two letters will advance the player, any other letters, character or keys will print a message, notifing them that the input was invalid.
 
 ![screenshot](documentation/feature03.png)
 
@@ -96,27 +96,13 @@ the text appeares at time intervals, giving the flowing feel of the game.
 Below is a list of some future features that could be implemented to the application.
 
 - Additional lists of words
-    - Any additional notes about this feature.
+    - In the future extra word lists can be added. Either to just have more words to teach the user or an extra difficulty level of words.
 - Catogaories of words
-    - Any additional notes about this feature.
+    - Another idea is having more groups of words, divided by catagories. the user could pick to test themselves on words from a food catagory, or travel etc. Specialisiing the learning.
 - Reverse eglish to spanish
-    - Any additional notes about this feature.
-- Cool new feature #3
-    - Any additional notes about this feature.
-
+    - Another idea is to reverse what the user sees and has to type. Currently the game shows the spanish word and asks for the english translation. The english could be shown and the spanish has to be typed.
 
 ## Tools & Technologies Used
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, you should explain the various tools and technologies used to develop the project.
-Make sure to put a link (where applicable) to the source, and explain what each was used for.
-Some examples have been provided, but this is just a sample only, your project might've used others.
-Feel free to delete any unused items below as necessary.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-
 
 - [Python](https://www.python.org) used as the main programming language in this project.
 - [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
@@ -130,9 +116,8 @@ Feel free to delete any unused items below as necessary.
 
 ### Flowchart
 
-To follow best practice, a flowchart was created for the app's logic,
-and mapped out before coding began using a free version of
-[Lucidchart](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning) and/or [Draw.io](https://www.draw.io).
+To follow best practice, a flowchart was created for the app's logic, and mapped out, using a free version of
+[Lucidchart](https://lucid.app/lucidchart/0e9e3ef0-01d8-444c-8553-dcd4a8875a21/edit?viewport_loc=-229%2C-83%2C2534%2C1213%2C~sHFGmMXijPm&invitationId=inv_962ddae8-7fa3-4339-a72a-04553bd402a6) 
 
 Below is the flowchart of the main process of this Python program. It shows the entire cycle of the program.
 
@@ -283,33 +268,18 @@ You can fork this repository by using the following steps:
 
 The only notable difference between the local and live version of this application that I am aware of, is the colours. The live deployed version seems to have rendered the colours darker and duller than the local version I developed. It doesn't seem to have any effect on the UX. 
 
-⚠️⚠️⚠️⚠️⚠️
 ## Credits
-
-### Content
 
 | Source | Location | Notes |
 | --- | --- | --- |
 | [Markdown Builder by Tim Nelson](https://traveltimn.github.io/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
-| [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
-| [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
-| [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
-| [Flexbox Froggy](https://flexboxfroggy.com/) | entire site | modern responsive layouts |
-| [Grid Garden](https://cssgridgarden.com) | entire site | modern responsive layouts |
-| [StackOverflow](https://stackoverflow.com/a/2450976) | quiz page | Fisher-Yates/Knuth shuffle in JS |
-| [YouTube](https://www.youtube.com/watch?v=YL1F4dCUlLc) | leaderboard | using `localStorage()` in JS for high scores |
-| [YouTube](https://www.youtube.com/watch?v=u51Zjlnui4Y) | PP3 terminal | tutorial for adding color to the Python terminal |
-| [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
-| [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
-
-⚠️⚠️⚠️⚠️⚠️
-### Media
-
-| Source | Location | Type | Notes |
-| --- | --- | --- | --- |
-| [Pexels](https://www.pexels.com) | entire site | image | favicon on all pages |
-| [Lorem Picsum](https://picsum.photos) | home page | image | hero image background |
-
+| [YouTube/Tech With Tim](https://www.youtube.com/watch?v=u51Zjlnui4Y) | entire application / coloured text | Tutorial on how to use the colorama module on a python project |
+| [geeks for geeks](https://www.geeksforgeeks.org/clear-screen-python/) | entire application / clearing terminal screen | Used to build a function, that clears the terminal  |
+| [Stack Overflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python) | entire application / clearing terminal screen | Used to build a function, that clears the terminal |
+| [w3 Schools](https://www.w3schools.com/python/ref_random_shuffle.asp) | main_game | Used to shuffle word list |
+| [Tim Nelson](https://traveltimn.github.io) | main_game() | Tim helped me with the code to create a copy of the list, allowing it to be shuffled and a dictionary removed one by one for the game. Keeping the original list un-touched "word_list = copy.deepcopy(list)" |
+| [Tim Nelson](https://traveltimn.github.io) | words.py | Tim helped me with the code to create a bank of words by using a list of dictionaries
+| [Digital Ocean](https://www.digitalocean.com/community/tutorials/python-time-sleep) | entire application | code that allows the delay of text output being displayed to the terminal
 
 ### Acknowledgements
 
