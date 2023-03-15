@@ -1,103 +1,109 @@
 # SPANISH WORD GAME
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, you will include a few paragraphs providing an overview of your project.
-Essentially, this part is your "sales pitch".
-
-At this stage, you should have a name for your project so use it!
-Don't introduce the project as a "portfolio project" for the diploma.
-
-In this section, describe what the project hopes to accomplish, who it is intended to target, and how it will be useful to the target audience.
-
-Consider adding a mockup image using the "Am I Responsive" website.
-Here's your deployed site as an example:
-https://ui.dev/amiresponsive?url=https://spanish-word-game.herokuapp.com
-
-Screenshots for the README and testing should not be inside of `assets/` or `static/` image folders.
-(reminder: `assets/` and `static/` are for files used on the live site, not documentation)
-Consider adding a new folder called `documentation`, and add the amiresponsive screenshot inside of that folder.
-To add the image into your README, use this format:
-(assuming you have a new folder called `documentation` with an image called "mockup.png")
 
 ![screenshot](documentation/mockup.png)
 
-Note: Markdown files (.md) should not contain HTML elements like `img`, `br`, `div`, `a`, etc, only Markdown formatting.
-Find out more about using Markdown elements here:
-https://pandao.github.io/editor.md/en.html
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+Welcome to the Spanish Word Game.
+
+This is a game written in the Python programming language, it is a terminal-based language word game. Its main purpose is to aid in the learning of new Spanish words while playing a game. Adding competitiveness, and gaming aspects to learning. It helps to increase general vocabulary knowledge, not testing on the specifics of grammar.
+
+A perfect tool for language schools to add to their curriculum. Giving their students some light relief from traditional learning techniques, and a simple way to introduce them to new vocabulary and test what has already been taught. With an easily edited word list, to update for students at different stages of their education.
+Also, easily edited into other languages.
+
+
+It is aimed at anyone of any age starting to learn Spanish as a new language. Ideal for kids, once they are of reading and writing ages, with the bonus of improving their typing skills, or even as their first introduction to hard typing. As it is a terminal-based game the display output and styling are minimalist and simple. This leaves it equally appealing to adults of all ages.
+
+The gameplay is straightforward. The user is asked if they want to see the rules of the game before the game begins. Once the user decides to start the game, they are asked what difficulty level they want to play. With two levels easy or hard, easy being short simple well-known words and hard being longer less well-known words. With the difficulty level chosen, the game will begin. A Spanish word is shown, and the user is prompted to type the English translation. Users will be told if correct or incorrect, with the translation shown for the incorrect guesses. Once the user scores 20 points or gets 3 incorrect answers the game ends. Their score will be displayed. The next option will be to start a new game or return to the opening section.
+
+The player is kept in a loop, with each section/page, there is a 2 option question, where the user can decide what to do next by typing a single letter. Creating a simply navigated game with a clear path through.
+
 
 ## UX
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+The idea for this game is a quick word learning game, it is simple to navigate and self explanitary. The navigation is circular, with a very clear path through the application. Being a terminal based game the scope for design features are limited. However to make this as user friendly as possible I implemented a few features, to the game.
 
-In this section, you will briefly explain your design processes.
+The most obvious is colour. By imorting a module called "colorama" I was able to style specific pieces of text with colour. This helps the UX of the application, by emphasisng certain information, e.g. notifing the user for a correct answer with the word "correct" in green and when wrong, "incorrect" in red. Using colour to make information clearer. The yellow, is the main colour used throughout for the title texts and input prompt text, creating a reckonisable theme throughout the appication.
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+Another two features that greatly increases the user experience is the clear terminal screen function, along with the text ouput delay function. This means that after every move or navigation to a different section by the user the terminal screen will clear. This prevents the terminal becoming too overcrowded with previous arts of the game. than as the terminal is re-populated with the output text of the new section, it is printed with differnet delay times. 
+
+Each section is finished with a question,e.g "do you want to start a new game", "do you want to see the gae rules". These are all 2 otion questions, with a click of a single letter key, the desion is made.
+the text appeares at time intervals, giving the flowing feel of the game.
+
 
 ## Features
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section, you should go over the different parts of your project,
-and describe each in a sentence or so.
-
-You will need to explain what value each of the features provides for the user,
-focusing on who this website is for, what it is that they want to achieve,
-and how your project is the best way to help them achieve these things.
-
-For some/all of your features, you may choose to reference the specific project files that implement them.
-
-IMPORTANT: Remember to always include a screenshot of each individual feature!
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 ### Existing Features
 
-- **Feature #1**
+- **Landing Area**
 
     - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
 
 ![screenshot](documentation/feature01.png)
 
-- **Feature #2**
+- **Game Rules**
 
     - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
 
 ![screenshot](documentation/feature02.png)
 
-- **Feature #3**
+- **Difficulty Level**
 
     - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
 
 ![screenshot](documentation/feature03.png)
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+- **Main game**
 
-Repeat as necessary for as many features as your site contains.
+    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
 
-Hint: the more, the merrier!
+![screenshot](documentation/feature03.png)
 
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
+- ****
+
+    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+
+![screenshot](documentation/feature03.png)
+
+- **Score and Lives Counters**
+
+    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+
+![screenshot](documentation/feature03.png)
+
+
+- **Question Function**
+
+    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+
+![screenshot](documentation/feature03.png)
+
+- **Game Class**
+
+    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+
+![screenshot](documentation/feature03.png)
+
+- **Difficulty Level**
+
+    - Details about this particular feature, including the value to the site, and benefit for the user. Be as detailed as possible!
+
+![screenshot](documentation/feature03.png)
+
 
 ### Future Features
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+Below is a list of some future features that could be implemented to the application.
 
-Do you have additional ideas that you'd like to include on your project in the future?
-Fantastic! List them here!
-It's always great to have plans for future improvements!
-Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-- Cool new feature #1
+- Additional lists of words
     - Any additional notes about this feature.
-- Cool new feature #2
+- Catogaories of words
+    - Any additional notes about this feature.
+- Reverse eglish to spanish
     - Any additional notes about this feature.
 - Cool new feature #3
     - Any additional notes about this feature.
+
 
 ## Tools & Technologies Used
 
@@ -110,29 +116,15 @@ Feel free to delete any unused items below as necessary.
 
 🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
-- [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
-- [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
-- [CSS :root variables](https://www.w3schools.com/css/css3_variables.asp) used for reusable styles throughout the site.
-- [CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp) and/or [CSS Grid](https://www.w3schools.com/css/css_grid.asp) used for an enhanced responsive layout.
-- [Bootstrap](https://getbootstrap.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
-- [Materialize](https://materializecss.com) used as the front-end CSS framework for modern responsiveness and pre-built components.
-- [JavaScript](https://www.javascript.com) used for user interaction on the site.
-- [Python](https://www.python.org) used as the back-end programming language.
+
+
+- [Python](https://www.python.org) used as the main programming language in this project.
 - [Git](https://git-scm.com) used for version control. (`git add`, `git commit`, `git push`)
 - [GitHub](https://github.com) used for secure online code storage.
-- [GitHub Pages](https://pages.github.com) used for hosting the deployed front-end site.
 - [Gitpod](https://gitpod.io) used as a cloud-based IDE for development.
 - [Markdown Builder by Tim Nelson](https://traveltimn.github.io/markdown-builder) used to help generate the Markdown files.
-- [Flask](https://flask.palletsprojects.com) used as the Python framework for the site.
-- [Django](https://www.djangoproject.com) used as the Python framework for the site.
-- [MongoDB](https://www.mongodb.com) used as the non-relational database management with Flask.
-- [SQLAlchemy](https://www.sqlalchemy.org) used as the relational database management with Flask.
-- [PostgreSQL](https://www.postgresql.org) used as the relational database management.
-- [ElephantSQL](https://www.elephantsql.com) used as the Postgres database.
 - [Heroku](https://www.heroku.com) used for hosting the deployed back-end site.
-- [Cloudinary](https://cloudinary.com) used for online static file storage.
-- [Stripe](https://stripe.com) used for online secure payments of ecommerce products/services.
-- [AWS S3](https://aws.amazon.com/s3) used for online static file storage.
+
 
 ## Data Model
 
@@ -148,45 +140,56 @@ Below is the flowchart of the main process of this Python program. It shows the 
 
 ### Classes & Functions
 
-The program uses classes as a blueprint for the project's objects (OOP). This allows for the object to be reusable.
+The program uses one class to handle game progress, (the score and lives counters), allowing them to be updated at different stages troughout the code
 
 ```python
-class Person:
-    """ Insert docstring comments here """
-    def __init__(self, name, age, health, inventory):
-        self.name = name
-        self.age = age
-        self.health = health
-        self.inventory = inventory
+class Game():
+    '''
+    Class to handle game progress (score and lives counters).
+    Allowing counters to be updated and printed, at different points.
+    '''
+    def __init__(self):
+        self.score = 0
+        self.lives = 3
+
 ```
 
 The primary functions used on this application are:
 
-- `get_sales_data()`
-    - Get sales figures input from the user.
-- `validate_data()`
-    - Converts all string values into integers.
-- `update_worksheet()`
-    - Update the relevant worksheet with the data provided.
-- `calculate_surplus_data()`
-    - Compare sales with stock and calculate the surplus for each item type.
-- `get_last_5_entries_sales()`
-    - Collects columns of data from sales worksheet.
-- `calculate_stock_data()`
-    -  Calculate the average stock for each item type, adding 10%.
-- `main()`
-    - Run all program functions.
+- `question()`
+    - Function to ask the user a y/n question, which takes functions as parameters. These functions are then called depending on the users answer, leading them to different places. This way the code doesn't have to be repeated every time the user is asked a question to get to the next step.
+
+- `start_game()`
+    - Function to ask user if they are ready to start the game, or want to see the set of game rules.
+- `rules()`
+    - Holds print statements for game rules,for user to read. Asks user for input to direct them to the game
+- `difficulty()`
+    - Function that leads to main game function. Checks what difficulty level user wants to play game at.
+- `main_game()`
+    - Creates duplicate list of the specific words list from words.py, picked at the difficulty function and shuffles it. Removes a dictionary from the list. Prints out the spanish word. Prompts the user to translate it and compare their answer to the matching english word. Updates game class, to determine the end of game.
+- `finished()`
+    - Function that takes the game class as an argument to decide when game ends, where to send them, to the you_win() or you_lose() functions
+- `you_win()`
+    -  Function to handle when the user completes the game. Displays, score and lives. Directs them back to the game.
+- `you_lose()`
+    - Function to handle when the user runs out of lives. Displays scores, and
+    directs them back to the game.
+
+- `clear()`
+    - Function to clear terminal screen, to be called at multiple points.
+
+- `question()`
+    - Function to ask the user a y/n question, which takes functions as parameters. These functions are then called depending on the users answer, leading them to different places. This way the code doesn't have to be repeated every time the user is asked a question to get to the next step.
 
 ### Imports
 
 I've used the following Python packages and/or external imported packages.
 
-- `gspread`: used with the Google Sheets API
-- `google.oauth2.service_account`: used for the Google Sheets API credentials
-- `time`: used for adding time delays
-- `os`: used for adding a `clear()` function
+- `time`: used for adding time delays to text outputs
+- `copy`: used for creating a shuffled list of words, to prevent words being repeated in game
+- `random`: used to get a random randomly shuffle word list
+- `os`: used for adding a `clear()` function, to clear the terminal screen
 - `colorama`: used for including color in the terminal
-- `random`: used to get a random choice from a list
 
 ## Testing
 
@@ -219,7 +222,7 @@ Heroku needs two additional files in order to deploy properly.
 You can install this project's **requirements** (where applicable) using:
 - `pip3 install -r requirements.txt`
 
-If you have your own packages that have been installed, then the requirements file needs updated using:
+If you have your own packages that have been installed, then the requirements file needs to be updated using:
 - `pip3 freeze --local > requirements.txt`
 
 The **Procfile** can be created with the following command:
@@ -228,7 +231,7 @@ The **Procfile** can be created with the following command:
 For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
 
 Either:
-- Select **Automatic Deployment** from the Heroku app.
+- Select **Automatic Deployment** or **Manual Deployment** from the Heroku app.
 
 Or:
 - In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
@@ -278,37 +281,16 @@ You can fork this repository by using the following steps:
 
 ### Local VS Deployment
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
+The only notable difference between the local and live version of this application that I am aware of, is the colours. The live deployed version seems to have rendered the colours darker and duller than the local version I developed. It doesn't seem to have any effect on the UX. 
 
-Use this space to discuss any differences between the local version you've developed, and the live deployment site on Heroku.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
+⚠️⚠️⚠️⚠️⚠️
 ## Credits
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-In this section you need to reference where you got your content, media, and extra help from.
-It is common practice to use code from other repositories and tutorials,
-however, it is important to be very specific about these sources to avoid plagiarism.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
 ### Content
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to provide attribution links to any borrowed code snippets, elements, or resources.
-A few examples have been provided below to give you some ideas.
-
-Ideally, you should provide an actual link to every resource used, not just a generic link to the main site!
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 | Source | Location | Notes |
 | --- | --- | --- |
 | [Markdown Builder by Tim Nelson](https://traveltimn.github.io/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
-| [Chris Beams](https://chris.beams.io/posts/git-commit) | version control | "How to Write a Git Commit Message" |
 | [W3Schools](https://www.w3schools.com/howto/howto_js_topnav_responsive.asp) | entire site | responsive HTML/CSS/JS navbar |
 | [W3Schools](https://www.w3schools.com/howto/howto_css_modals.asp) | contact page | interactive pop-up (modal) |
 | [W3Schools](https://www.w3schools.com/css/css3_variables.asp) | entire site | how to use CSS :root variables |
@@ -320,45 +302,18 @@ Ideally, you should provide an actual link to every resource used, not just a ge
 | [strftime](https://strftime.org) | CRUD functionality | helpful tool to format date/time from string |
 | [WhiteNoise](http://whitenoise.evans.io) | entire site | hosting static files on Heroku temporarily |
 
+⚠️⚠️⚠️⚠️⚠️
 ### Media
-
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to provide attribution links to any images, videos, or audio files borrowed from online.
-A few examples have been provided below to give you some ideas.
-
-If you're the owner (or a close acquaintance) of all media files, then make sure to specify this.
-Let the assessors know that you have explicit rights to use the media files within your project.
-
-Ideally, you should provide an actual link to every media file used, not just a generic link to the main site!
-The list below is by no means exhaustive. Within the Code Institute Slack community, you can find more "free media" links
-by sending yourself the following command: `!freemedia`.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
 
 | Source | Location | Type | Notes |
 | --- | --- | --- | --- |
 | [Pexels](https://www.pexels.com) | entire site | image | favicon on all pages |
 | [Lorem Picsum](https://picsum.photos) | home page | image | hero image background |
-| [Unsplash](https://unsplash.com) | product page | image | sample of fake products |
-| [Pixabay](https://pixabay.com) | gallery page | image | group of photos for gallery |
-| [Wallhere](https://wallhere.com) | footer | image | background wallpaper image in the footer |
-| [This Person Does Not Exist](https://thispersondoesnotexist.com) | testimonials | image | headshots of fake testimonial images |
-| [Audio Micro](https://www.audiomicro.com/free-sound-effects) | game page | audio | free audio files to generate the game sounds |
-| [Videvo](https://www.videvo.net/) | home page | video | background video on the hero section |
-| [TinyPNG](https://tinypng.com) | entire site | image | tool for image compression |
+
 
 ### Acknowledgements
 
-⚠️⚠️⚠️⚠️⚠️ START OF NOTES (to be deleted) ⚠️⚠️⚠️⚠️⚠️
-
-Use this space to provide attribution to any supports that helped, encouraged, or supported you throughout the development stages of this project.
-A few examples have been provided below to give you some ideas.
-
-🛑🛑🛑🛑🛑 END OF NOTES (to be deleted) 🛑🛑🛑🛑🛑
-
-- I would like to thank my Code Institute mentor, [John/Jane Doe](https://github.com/username) for their support throughout the development of this project.
-- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting and debugging some project issues.
-- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and imposter syndrome.
-- I would like to thank my spouse/partner (John/Jane), for believing in me, and allowing me to make this transition into software development.
-- I would like to thank my employer, for supporting me in my career development change towards becoming a software developer.
+- I would like to thank my Code Institute mentor, [Tim Nelson](https://traveltimn.github.io) for his support and advice throughout the development of this project.
+- I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting.
+- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support.
+- I would like to thank my partner (Isabel), all the support and for helping with the spanish translations.
