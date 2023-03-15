@@ -132,7 +132,7 @@ def main_game(list, level):
     word_list = copy.deepcopy(list)
     random.shuffle(word_list)
 
-    while game.lives > 0 and game.score < 3:
+    while game.lives > 0 and game.score < 20:
         word = word_list.pop(0)
         english_word = word['english']
         spanish_word = word['spanish']
