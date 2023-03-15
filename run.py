@@ -10,7 +10,8 @@ colorama.init(autoreset=True)
 
 class Game():
     '''
-    Game object with game progress
+    Class to handle game progress (score and lives counters).
+    Allowing counters to be updated and printed, at different points.
     '''
     def __init__(self):
         self.score = 0
@@ -68,8 +69,8 @@ def you_win(game):
 
 def finished(game):
     '''
-    Function to handle the score vs lives counters, when game ends, to decide
-    where to send them,to the you_win or you_lose functions
+    Function that takes the game class as an argument to decide when game ends,
+    where to send them, to the you_win() or you_lose() functions.
     '''
     if game.lives <= 0:
         clear()
@@ -86,8 +87,8 @@ def finished(game):
 
 def rules():
     '''
-    Holds set of game rules, can be accessed from different areasof the game,
-    for user to read. Asks user for input to direct them to the game
+    Holds print statements for game rules,for user to read.
+    Asks user for input to direct them to the game
     '''
     print("")
     print(f" {Fore.YELLOW}**********SPANISH WORD GAME**********\n")
@@ -111,10 +112,11 @@ def rules():
 
 def main_game(list, level):
     '''
-    Gets a random set of translations from a list of dictionaries in words.py.
-    Prints out one spanish word using its dictionary key. Prompts the user to
-    translate it and compare their answer to the matching english word.
-    Keeps score counter and lives counter, to determine the end of game
+    Creates duplicate list of the specific words list from words.py,
+    picked at the difficulty function and shuffles it. Removes a dictionary
+    from the list. Prints out the spanish word. Prompts the user to translate
+    it and compare their answer to the matching english word. Updates game
+    class,to determine the end of game.
     '''
     print("")
     print(f" {Fore.YELLOW}**********SPANISH WORD GAME**********\n")
@@ -159,6 +161,10 @@ def main_game(list, level):
 
 
 def difficulty():
+    '''
+    Function that leads to main game function.
+    Checks what difficulty level user wants to play game at.
+    '''
     print(f" {Fore.YELLOW}**********SPANISH WORD GAME**********\n")
     time.sleep(1.5)
     print(f" What difficulty level would you like to play")
