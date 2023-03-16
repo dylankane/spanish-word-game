@@ -4,7 +4,7 @@
 ![screenshot](documentation/mockup.png)
 
 
-## Welcome to the Spanish Word Game ##
+## Welcome to the Spanish Word Game
 
 This is a game written in the Python programming language, it is a terminal-based language word game. Its main purpose is to aid in the learning of new Spanish words while playing a game. Adding competitiveness, and gaming aspects to learning. It helps to increase general vocabulary knowledge, not testing on the specifics of grammar.
 
@@ -21,15 +21,15 @@ The player is kept in a loop, with each section/page, there is a 2 option questi
 
 ## UX
 
-The idea for this game is a quick word learning game, it is simple to navigate and self explanitary. The navigation is circular, with a very clear path through the application. Being a terminal based game the scope for design features are limited. However to make this as user friendly as possible I implemented a few features, to the game.
+The idea for this game is a quick word-learning game, it is simple to navigate and self-explanatory. The navigation is circular, with a very clear path through the application. Being a terminal-based game the scope for design features is limited. However, to make this as user-friendly as possible I implemented a few features, to the game.
 
-The most obvious is colour. By imorting a module called "colorama" I was able to style specific pieces of text with colour. This helps the UX of the application, by emphasisng certain information, e.g. notifing the user for a correct answer with the word "correct" in green and when wrong, "incorrect" in red. Using colour to make information clearer. The yellow, is the main colour used throughout for the title texts and input prompt text, creating a reckonisable theme throughout the appication.
+The most obvious is colour. By importing a module called "Colorama" I was able to style specific pieces of text with colour. This helps the UX of the application, by emphasising certain information, e.g. notifying the user of a correct answer with the word "correct" in green and when wrong, "incorrect" in red. Using colour to make information clearer. Yellow, is the main colour used throughout for the title texts and input prompt text, creating a recognisable theme throughout the application.
 
-Another two features that greatly increases the user experience is the clear terminal screen function, along with the text ouput delay function. This means that after every move or navigation to a different section by the user the terminal screen will clear. This prevents the terminal becoming too overcrowded with previous arts of the game. than as the terminal is re-populated with the output text of the new section, it is printed with differnet delay times. 
+Another two features that greatly increase the user experience is the clear terminal screen function, along with the text output delay function. This means that after every move or navigation to a different section by the user, the terminal screen will clear. This prevents the terminal from becoming too overcrowded with previous arts of the game. Then as the terminal is re-populated with the output text of the new section, it is printed with different delay times. 
 
-Each section is finished with a question,e.g "do you want to start a new game", "do you want to see the gae rules". These are all 2 otion questions, with a click of a single letter key, the desion is made.
-the text appeares at time intervals, giving the flowing feel of the game.
+Each section is finished with a question,e.g "do you want to start a new game", or "do you want to see the game rules". These are all 2 option questions, with a click of a single letter key and pressing enter, the decision is made. Quick navigations and delayed text printing, helps create a nice flow to the game with an easy user interface.
 
+Few distractions, clean look in the terminal and simple intructions all add to an efficient UX, perfect for an educational tool/game.
 
 ## Features
 
@@ -37,59 +37,68 @@ the text appeares at time intervals, giving the flowing feel of the game.
 
 - **Start Game**
 
-    - Here is where the application begins. The title and sub title, appear one after each other with a short delay between them. Finally showing a question, asking the user if they would like to see the rules brfore beginning the game. This is a y/n question, that prompts the user to type y or n. If y is typed the terminal is cleared, and the rules funtion is called. If N is typed the terminal is cleared, and the difficulty function is called.
+    - Here is where the application begins. The title and subtitle, appear one after the other with a short delay between them. Finally showing a question, asking the user if they would like to see the rules before beginning the game. This is a Y/N question, that prompts the user to type Y or N for yes or no. If Y is typed the terminal is cleared, and the rules function is called. If N is typed the terminal is cleared, and the difficulty function is called.
 
-![screenshot](documentation/feature01.png)
+![screenshot](documentation/start-game-screenshot.png)
 
 - **Game Rules**
 
-    - If the player chooses to see the rules, the cleared terminal shows the game title, with a delay, then a list of the game rules followed by a question after. This question is also y/n. Controlled by the question function. They are asked if they are ready to start a game. Y will call the difficulty function, while n will call back to the start_game function.
+    - If the player chooses to see the rules, the cleared terminal shows the game title, with a delay, then a list of the game rules followed by a question after. This question is also Y/N. Controlled by the question function. They are asked if they are ready to start a game. Y will call the difficulty function, while N will call back to the start_game function.
 
-![screenshot](documentation/feature02.png)
+![screenshot](documentation/game-rules-screenshot.png)
 
 - **Difficulty Level**
 
-    -Here the player is asked what difficulty game level they would like to play, easy or hard. This also has a delay applied to the printing of the output text. This question is answered with the keys E or H, for easy or hard. Both options call the main game function but with the parameter of what level is chosen.
+    -Here the player is asked what difficulty level they would like to play, easy or hard. This also has a delay applied to the printing of the output text. This question is answered with the keys E or H, for easy or hard. Both options call the main game function but with the parameter of what level is chosen.
 
-![screenshot](documentation/feature03.png)
+![screenshot](documentation/difficulty-level-screenshot.png)
 
 - **Main game**
 
-    - This is where the main logic of the game takes place. The user is notified what level they chose, and told the game is beginning. After a delay the terminal is cleared again and the lives counter and score counter is printed to the top of the terminal, and stays ther while the game is in progress, been updated as the game continues. The first spanish word is printed. The user then types the translation, and presses enter. If correct the word correct is printed in green and the counters are updated. If incorrect the word incorrect, is printed in red, and the correct anwer is also printed. there is a delay and then the terminal is cleared bar the counters, and a new word is printed. The correct answer when the user is incorrect is displayed longer before the termonal is cleared to give them a chance to read and notethe correct answer. This game logic contiues in a while loop, until either the score reaches 20 or the lives counter goes below 0, by getting 3 wrong answers. The finshed function is then called.
+    - This is where the main logic of the game takes place. The user is notified what level they chose, and told the game is beginning. After a delay, the terminal is cleared again and the lives counter and score counter are printed to the top of the terminal, and stay there while the game is in progress, being updated as the game continues. The first Spanish word is printed. The user then types the translation, and presses enter. If correct the word correct is printed in green and the counters are updated. If incorrect the word incorrect, is printed in red, and the correct answer is also printed. there is a delay and then the terminal is cleared bar the counters, and a new word is printed. The correct answer when the user is incorrect is displayed longer before the terminal is cleared to give them a chance to read and note the correct answer. This game logic continues in a while loop, until either the score reaches 20 or the lives counter goes below 0, by getting 3 wrong answers. The finished function is then called.
 
-![screenshot](documentation/feature03.png)
+![screenshot](documentation/main-game-screenshot.png)
+![screenshot](documentation/game-screenshoot.png)
+![screenshot](documentation/correct-game-screenshot.png)
+![screenshot](documentation/incorrect-game-screenshot.png)
 
 - **Finished game**
 
-    - This function takes the parameters of the game class (score and lives), to deal with the decision of whether the player has won or lost, which then calls the win or loose game functions. These then print the, you have won or lost statements and show the stats of the game, using the game class again. Both outcomes will then prompt the user do either start a new game or return to the very beginning of the application, with another Y/N question.
+    - This function takes the parameters of the game class (score and lives), to deal with the decision of whether the player has won or lost, which then calls the win or lose game functions. These then print the won or lost statements and show the stats of the game, using the game class again. Both outcomes will then prompt the user to either start a new game or return to the very beginning of the application, with another Y/N question.
 
-![screenshot](documentation/feature03.png)
+![screenshot](documentation/gameover-screenshot.png)
+![screenshot](documentation/finished-win-screenshots.png)
 
 - **Score and Lives Counters**
 
-    - The score and lives stats of the current game is stored, controlled and passed to other functions by the game class. Throughout the gameplay these numbers are displayed at the head of the terminal and updated after each answer.
+    - The score and lives stats of the current game is stored, controlled, and passed to other functions by the game class. Throughout the gameplay, these numbers are displayed at the head of the terminal and updated after each answer.
 
-![screenshot](documentation/feature03.png)
-
+![screenshot](documentation/score-lives-screenshot.png)
 
 - **Question Function**
 
-    - This function was built to deal with nearly all the questions prompted to the user to anwer throughout the game. Its purose is to reduce the amount of repition of code. Any y/n question is prefromed by this one function. the function is called with parameters, that tell the function what other functions to call depending on the answer of the user. This greatly helped to refactor the code, in all the other functions.
+    - This function was built to deal with nearly all the questions that prompted the user to answer throughout the game. Its purpose is to reduce the amount of repetition of code. Any Y/N question is performed by this one function. the function is called with parameters, that tell the function what other functions to call depending on the answer of the user. This greatly helped to refactor the code, in all the other functions.
 
-![screenshot](documentation/feature03.png)
+![screenshot](documentation/question-screenshot.png)
 
 - **Game Class**
 
-    - This class was built to globaly handle the scores and lives counters, in the game. Allowing me to pass these stats to different areas in the code. Again helping to reduce the amount of the code and repitition throughout run.py file.
+    - This class was built to globally handle the scores and lives counters, in the game. Allowing me to pass these stats to different areas in the code. Again helping to reduce the amount of code and repetition throughout the run.py file.
 
-![screenshot](documentation/feature03.png)
+![screenshot](documentation/game-class-screenshot.png)
 
 - **Difficulty Level**
 
-    - This area is where the user decides what game level they want to play at. The terminal prints the question, giving two options, selected by typing one of two letters. "E for easy or "H" for hard. Like all the other user inputs in the applicatio only these two letters will advance the player, any other letters, character or keys will print a message, notifing them that the input was invalid.
+    - This area is where the user decides what game level they want to play at. The terminal prints the question, giving two options, selected by typing one of two letters. "E" for easy or "H" for hard. Like all the other user inputs in the application, only these two letters will advance the player, any other letters, characters or keys will print a message, notifying them that the input was invalid.
 
-![screenshot](documentation/feature03.png)
+![screenshot](documentation/difficulty-level-screenshot.png)
 
+- **Words lists**
+
+    - In the words.py file, I have two lists of words stored, one for the easy level and one for the hard level. These are accessed by the main_game function, to pull a Spanish word to display and a matching English word to compare to the user's answer. The lists of words are stored as a list of dictionaries. This allows the function to access the word pairs by using their dictionary key: value sets. 
+    They have been left to easily edit and add to. When the word lists are being called on, I have the main_game function make a duplicate/copy of the list, randomly shuffle the list, and then remove one dictionary for each question/translation to the player. They are being removed from the copied list with the pop() method, making sure no words are being repeated during one game.
+
+![screenshot](documentation/words-list.png)
 
 ### Future Features
 
@@ -113,8 +122,6 @@ Below is a list of some future features that could be implemented to the applica
 
 
 ## Data Model
-
-### Flowchart
 
 To follow best practice, a flowchart was created for the app's logic, and mapped out, using a free version of
 [Lucidchart](https://lucid.app/lucidchart/0e9e3ef0-01d8-444c-8553-dcd4a8875a21/edit?viewport_loc=-229%2C-83%2C2534%2C1213%2C~sHFGmMXijPm&invitationId=inv_962ddae8-7fa3-4339-a72a-04553bd402a6) 
