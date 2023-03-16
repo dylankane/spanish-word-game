@@ -7,6 +7,8 @@ import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
+WIN_TOTAL = 20
+
 
 class Game():
     '''
@@ -75,7 +77,7 @@ def finished(game):
     if game.lives <= 0:
         clear()
         you_lose(game)
-    elif game.score >= 3:
+    elif game.score >= WIN_TOTAL:
         clear()
         you_win(game)
     time.sleep(1.5)
@@ -93,18 +95,18 @@ def rules():
     print("")
     print(f" {Fore.YELLOW}**********SPANISH WORD GAME**********\n")
     time.sleep(1.5)
-    print(f" {Back.YELLOW}-----------The Rules-----------\n")
-    print(" -First choose your difficulty level, easy or hard")
-    print(" -Easy will ask you to translate shorter well known spanish words")
-    print(" -Hard will ask you to translate longer more difficult words")
-    print(" -Start your game, and you will be given a Spanish word")
-    print(" -Just type the english translation for this word")
-    print(" -You have 3 lives to complete the game")
-    print(" -Each correct translation is 1 point")
-    print(" -Score 20 points to win")
-    print(" -If your answer is incorrect the correct answer will be shown")
-    print(f" -Have fun and learn !!!\n")
-    print(f" {Back.YELLOW}-------------------------------\n\n")
+    print(f" {Back.YELLOW}{Fore.BLACK}-----------The Rules-----------\n")
+    print(" - First choose your difficulty level, easy or hard")
+    print(" - Easy will ask you to translate shorter well known spanish words")
+    print(" - Hard will ask you to translate longer more difficult words")
+    print(" - Start your game, and you will be given a Spanish word")
+    print(" - Just type the english translation for this word")
+    print(" - You have 3 lives to complete the game")
+    print(" - Each correct translation is 1 point")
+    print(" - Score 20 points to win")
+    print(" - If your answer is incorrect the correct answer will be shown")
+    print(f" - Have fun and learn !!!\n")
+    print(f" {Back.YELLOW}{Fore.BLACK}-------------------------------\n\n")
     time.sleep(2)
     print(f" Would you like to start the game now?")
     question(difficulty, start_game)
@@ -132,7 +134,7 @@ def main_game(list, level):
     word_list = copy.deepcopy(list)
     random.shuffle(word_list)
 
-    while game.lives > 0 and game.score < 20:
+    while game.lives > 0 and game.score < WIN_TOTAL:
         word = word_list.pop(0)
         english_word = word['english']
         spanish_word = word['spanish']
@@ -190,6 +192,7 @@ def start_game():
     Function to ask user if they are ready to start the game,
     or want to see the set of game rules.
     '''
+    clear()
     print("")
     print(f" {Fore.YELLOW}***********WELCOME TO THE************\n")
     time.sleep(1.5)
