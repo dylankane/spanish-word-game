@@ -130,6 +130,24 @@ Below is the flowchart of the main process of this Python program. It shows the 
 
 ![screenshot](documentation/flowchart.png)
 
+- I used [Mermaid.live](https://mermaid.live/edit#pako:eNqNkcsKgzAQRX9FZlVBN1266Kp_0F0JyGBGDTWJ5NEi4r83lfpCLM0qc8_JJEN6KDQnyMA6dHQVWBmU6fPMVBRWCI3LK5R0iqM0vURclKUofOO6U3ygGN-Qnei3GMHa3NN953UyKhKF2pxfBaNQCiVsTXziSz3iTvv8JdQP2mg7N5_tg-ct_n_CfvztDWsOCUgyYTwefqb_2AxcTZIYZGHL0TwYMDUED73Tt04VkDnjKQHf8uUjISuxsSFtUd21nurhDQbMnt8) to generate the flowchart as well.
+
+```mermaid
+    stateDiagram-v2
+        start_game() --> difficulty()
+        start_game() --> rules()
+        rules() --> start_game()
+        rules() --> difficulty()
+        difficulty() --> main_game()
+        main_game() --> finished()
+        finished() --> you_win()
+        finished() --> you_lose()
+        you_win() --> difficulty()
+        you_lose() --> difficulty()
+        you_lose() --> start_game()
+        you_win() --> start_game()
+```
+
 ### Classes & Functions
 
 The program uses one class to handle game progress, (the score and lives counters), allowing them to be updated at different stages troughout the code
@@ -284,13 +302,11 @@ The only notable difference between the local and live version of this applicati
 | [geeks for geeks](https://www.geeksforgeeks.org/clear-screen-python/) | entire application / clearing terminal screen | Used to build a function, that clears the terminal  |
 | [Stack Overflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python) | entire application / clearing terminal screen | Used to build a function, that clears the terminal |
 | [w3 Schools](https://www.w3schools.com/python/ref_random_shuffle.asp) | main_game | Used to shuffle word list |
-| [Tim Nelson](https://traveltimn.github.io) | main_game() | Tim helped me with the code to create a copy of the list, allowing it to be shuffled and a dictionary removed one by one for the game. Keeping the original list un-touched "word_list = copy.deepcopy(list)" |
-| [Tim Nelson](https://traveltimn.github.io) | words.py | Tim helped me with the code to create a bank of words by using a list of dictionaries
 | [Digital Ocean](https://www.digitalocean.com/community/tutorials/python-time-sleep) | entire application | code that allows the delay of text output being displayed to the terminal
 
 ### Acknowledgements
 
-- I would like to thank my Code Institute mentor, [Tim Nelson](https://traveltimn.github.io) for his support and advice throughout the development of this project.
+- I would like to thank my Code Institute mentor, [Tim Nelson](https://www.github.com/traveltimn) for his support and advice throughout the development of this project.
 - I would like to thank the [Code Institute](https://codeinstitute.net) tutor team for their assistance with troubleshooting.
 - I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support.
 - I would like to thank my partner (Isabel), all the support and for helping with the spanish translations.
