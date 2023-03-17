@@ -6,13 +6,11 @@
 
 ## Welcome to the Spanish Word Game
 
-This is a game written in the Python programming language, it is a terminal-based language word game. Its main purpose is to aid in the learning of new Spanish words while playing a game. Adding competitiveness, and gaming aspects to learning. It helps to increase general vocabulary knowledge, not testing on the specifics of grammar.
+This is an application primarily developed in the Python programming language, it is a terminal-based language word game. Its main purpose is to aid in the learning of new Spanish words while playing a game. Adding competitiveness, and gaming aspects to learning. It helps to increase general vocabulary knowledge, not testing on the specifics of grammar.
 
-A perfect tool for language schools to add to their curriculum. Giving their students some light relief from traditional learning techniques, and a simple way to introduce them to new vocabulary and test what has already been taught. With an easily edited word list, to update for students at different stages of their education.
-Also, easily edited into other languages.
+A perfect tool for language schools to add to their curriculum. Giving their students some light relief from traditional learning techniques, and a simple way to introduce them to new vocabulary and test what has already been taught. With an easily edited word list, to update for students at different stages of their education. Also, easily updated into other languages.
 
-
-It is aimed at anyone of any age starting to learn Spanish as a new language. Ideal for kids, once they are of reading and writing ages, with the bonus of improving their typing skills, or even as their first introduction to hard typing. As it is a terminal-based game the display output and styling are minimalist and simple. This leaves it equally appealing to adults of all ages.
+It is aimed at users of any age, starting to learn Spanish as a new language. Ideal for kids, once they are of reading and writing ages, with the bonus of improving their typing skills, or even as their first introduction to hard typing. As it is a terminal-based game the display output and styling are minimalist and simple. This leaves it equally appealing to adults of all ages.
 
 The gameplay is straightforward. The user is asked if they want to see the rules of the game before the game begins. Once the user decides to start the game, they are asked what difficulty level they want to play. With two levels easy or hard, easy being short simple well-known words and hard being longer less well-known words. With the difficulty level chosen, the game will begin. A Spanish word is shown, and the user is prompted to type the English translation. Users will be told if correct or incorrect, with the translation shown for the incorrect guesses. Once the user scores 20 points or gets 3 incorrect answers the game ends. Their score will be displayed. The next option will be to start a new game or return to the opening section.
 
@@ -25,11 +23,11 @@ The idea for this game is a quick word-learning game, it is simple to navigate a
 
 The most obvious is colour. By importing a module called "Colorama" I was able to style specific pieces of text with colour. This helps the UX of the application, by emphasising certain information, e.g. notifying the user of a correct answer with the word "correct" in green and when wrong, "incorrect" in red. Using colour to make information clearer. Yellow, is the main colour used throughout for the title texts and input prompt text, creating a recognisable theme throughout the application.
 
-Another two features that greatly increase the user experience is the clear terminal screen function, along with the text output delay function. This means that after every move or navigation to a different section by the user, the terminal screen will clear. This prevents the terminal from becoming too overcrowded with previous arts of the game. Then as the terminal is re-populated with the output text of the new section, it is printed with different delay times. 
+Another two features that greatly increase the user experience is the clear terminal screen function, along with the text output delay function. This means that after every move or navigation to a different section by the user, the terminal screen will clear. This prevents the terminal from becoming too overcrowded with previous text from the game. Then as the terminal is re-populated with the output text of the new section, it is printed with different delay times. 
 
 Each section is finished with a question,e.g "do you want to start a new game", or "do you want to see the game rules". These are all 2 option questions, with a click of a single letter key and pressing enter, the decision is made. Quick navigations and delayed text printing, helps create a nice flow to the game with an easy user interface.
 
-Few distractions, clean look in the terminal and simple intructions all add to an efficient UX, perfect for an educational tool/game.
+Few distractions, clean look in the terminal and simple instructions all add to an efficient UX, perfect for an educational tool/game.
 
 ## Features
 
@@ -55,7 +53,7 @@ Few distractions, clean look in the terminal and simple intructions all add to a
 
 - **Main game**
 
-    - This is where the main logic of the game takes place. The user is notified what level they chose, and told the game is beginning. After a delay, the terminal is cleared again and the lives counter and score counter are printed to the top of the terminal, and stay there while the game is in progress, being updated as the game continues. The first Spanish word is printed. The user then types the translation, and presses enter. If correct the word correct is printed in green and the counters are updated. If incorrect the word incorrect, is printed in red, and the correct answer is also printed. there is a delay and then the terminal is cleared bar the counters, and a new word is printed. The correct answer when the user is incorrect is displayed longer before the terminal is cleared to give them a chance to read and note the correct answer. This game logic continues in a while loop, until either the score reaches 20 or the lives counter goes below 0, by getting 3 wrong answers. The finished function is then called.
+    - This is where the main logic of the game takes place. This function creates a copy of the word list chosen by the difficulty level,and shuffles it. The user is notified what level they chose, and told the game is beginning. After a delay, the terminal is cleared again and the lives counter and score counter are printed to the top of the terminal, and stay there while the game is in progress, being updated as the game continues. The first Spanish word is printed, by removing one dictionary from the list copy, and by using its key for spainish word prints its value. The user then types the translation, and presses enter. This input is compared to the value of the english key from the same dictionary. If correct the word "correct" is printed in green and the counters are updated. If incorrect the word "incorrect", is printed in red, and the correct answer is also printed. There is a delay and then the terminal is cleared, bar the counters, and a new word is printed. The correct answer, when the user is incorrect, is displayed for longer before the terminal is cleared, to give them a chance to read and note the right answer. This game logic continues in a while loop, until either the score reaches 20 or the lives counter goes below 0, by getting 3 wrong answers. The finished function is then called.
 
 ![screenshot](documentation/main-game-screenshot.png)
 ![screenshot](documentation/game-screenshoot.png)
@@ -77,7 +75,7 @@ Few distractions, clean look in the terminal and simple intructions all add to a
 
 - **Question Function**
 
-    - This function was built to deal with nearly all the questions that prompted the user to answer throughout the game. Its purpose is to reduce the amount of repetition of code. Any Y/N question is performed by this one function. the function is called with parameters, that tell the function what other functions to call depending on the answer of the user. This greatly helped to refactor the code, in all the other functions.
+    - This function was built to deal with nearly all the questions that are prompted to the user to answer throughout the game. Its purpose is to reduce the amount of repetition of code. Any Y/N question is performed by this one function. the function is called with parameters, that tell the function what other functions to call depending on the answer of the user. This greatly helped to refactor the code, in all the other functions.
 
 ![screenshot](documentation/question-screenshot.png)
 
@@ -87,15 +85,9 @@ Few distractions, clean look in the terminal and simple intructions all add to a
 
 ![screenshot](documentation/game-class-screenshot.png)
 
-- **Difficulty Level**
-
-    - This area is where the user decides what game level they want to play at. The terminal prints the question, giving two options, selected by typing one of two letters. "E" for easy or "H" for hard. Like all the other user inputs in the application, only these two letters will advance the player, any other letters, characters or keys will print a message, notifying them that the input was invalid.
-
-![screenshot](documentation/difficulty-level-screenshot.png)
-
 - **Words lists**
 
-    - In the words.py file, I have two lists of words stored, one for the easy level and one for the hard level. These are accessed by the main_game function, to pull a Spanish word to display and a matching English word to compare to the user's answer. The lists of words are stored as a list of dictionaries. This allows the function to access the word pairs by using their dictionary key: value sets. 
+    - In the words.py file, I have two lists of words stored, one for the easy level and one for the hard level. These are accessed by the `main_game()` function, to pull a Spanish word to display and a matching English word to compare to the user's answer. The lists of words are stored as a list of dictionaries. This allows the function to access the word pairs by using their dictionary key: value sets. 
     They have been left to easily edit and add to. When the word lists are being called on, I have the main_game function make a duplicate/copy of the list, randomly shuffle the list, and then remove one dictionary for each question/translation to the player. They are being removed from the copied list with the pop() method, making sure no words are being repeated during one game.
 
 ![screenshot](documentation/words-list.png)
@@ -107,9 +99,9 @@ Below is a list of some future features that could be implemented to the applica
 - Additional lists of words
     - In the future extra word lists can be added. Either to just have more words to teach the user or an extra difficulty level of words.
 - Catogaories of words
-    - Another idea is having more groups of words, divided by catagories. the user could pick to test themselves on words from a food catagory, or travel etc. Specialisiing the learning.
+    - Another idea is having more groups of words, divided by catagories. The user could pick to test themselves on words from a food category, or travel etc. Specialisiing the learning.
 - Reverse eglish to spanish
-    - Another idea is to reverse what the user sees and has to type. Currently the game shows the spanish word and asks for the english translation. The english could be shown and the spanish has to be typed.
+    - Another idea is to reverse what the user sees and has to type. Currently the game shows the spanish word and asks for the english translation. The English could be shown and the Spanish has to be typed.
 
 ## Tools & Technologies Used
 
@@ -150,7 +142,7 @@ Below is the flowchart of the main process of this Python program. It shows the 
 
 ### Classes & Functions
 
-The program uses one class to handle game progress, (the score and lives counters), allowing them to be updated at different stages troughout the code
+The program uses one class to handle game progress, (the score and lives counters), allowing them to be updated and displayed at different stages troughout the code
 
 ```python
 class Game():
@@ -298,8 +290,8 @@ The only notable difference between the local and live version of this applicati
 | Source | Location | Notes |
 | --- | --- | --- |
 | [Markdown Builder by Tim Nelson](https://traveltimn.github.io/markdown-builder) | README and TESTING | tool to help generate the Markdown files |
-| [YouTube/Tech With Tim](https://www.youtube.com/watch?v=u51Zjlnui4Y) | entire application / coloured text | Tutorial on how to use the colorama module on a python project |
-| [geeks for geeks](https://www.geeksforgeeks.org/clear-screen-python/) | entire application / clearing terminal screen | Used to build a function, that clears the terminal  |
+| [YouTube/Tech With Tim](https://www.youtube.com/watch?v=u51Zjlnui4Y) | Entire application / coloured text | Tutorial on how to use the colorama module on a python project |
+| [geeks for geeks](https://www.geeksforgeeks.org/clear-screen-python/) | Entire application / clearing terminal screen | Used to build a function, that clears the terminal  |
 | [Stack Overflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python) | entire application / clearing terminal screen | Used to build a function, that clears the terminal |
 | [w3 Schools](https://www.w3schools.com/python/ref_random_shuffle.asp) | main_game | Used to shuffle word list |
 | [Digital Ocean](https://www.digitalocean.com/community/tutorials/python-time-sleep) | entire application | code that allows the delay of text output being displayed to the terminal
