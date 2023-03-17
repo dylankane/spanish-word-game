@@ -29,39 +29,35 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 Defensive programming was manually tested with the below user acceptance testing:
 
-| Section | User Action | Expected Result | Pass/Fail | Comments |
-| --- | --- | --- | --- | --- |
-| Start Game | | | | |
-| | Type "Y" | Redirection to game rules | Pass | |
-| | Type "N" | Redirection to difficulty choice | Pass | |
-| |Type neither Y/N or non letter key | Invalid entry message, ask user to answer again | Pass | |
-| Rules | | | | |
-| | Type "Y" | Redirection to difficulty choice | Pass | |
-| | Type "N" | Redirection back to start game | Pass | |
-| |Type neither Y/N or non letter key | Invalid entry message, ask user to answer again | Pass | |
-| Difficulty level | | | | |
-| | Type "E" | Redirection to main game with easy level choosen | Pass | |
-| | Type "H" | Redirection to main game with hard level choosen | Pass | |
-| |Type neither E/H or type non letter key | Invalid entry message, ask user to answer again | Pass | |
-| Main Game | | | | |
-| | Type translation | Correct | Pass | |
-| | Type translation | Cncorrect  | Pass | |
-| Win game | | | | |
-| | Type "Y" | Redirection to main game | Pass | |
-| | Type "N" | Redirection back to start game | Pass | |
-| |Type neither E/H or type non letter key | Invalid entry message, ask user to answer again | Pass | |
-| Loose game | | | | |
-| | Type "Y" | Redirection to main game | Pass | |
-| | Type "N" | Redirection back to start game | Pass | |
-| |Type neither E/H or type non letter key | Invalid entry message, ask user to answer again | Pass | |
-| Win game | | | | |
-| | Click on Sign Up button | Redirection to Sign Up page | Pass | |
-| Win game | | | | |
-| | Click on Sign Up button | Redirection to Sign Up page | Pass | |
-| Win game | | | | |
-| | Click on Sign Up button | Redirection to Sign Up page | Pass | |
-| Win game | | | | |
-| | Click on Sign Up button | Redirection to Sign Up page | Pass | |
+| Section | User Action | Expected Result | Pass/Fail |
+| --- | --- | --- | --- |
+| Start Game | | | |
+| | Type "Y" | Redirection to game rules | Pass |
+| | Type "N" | Redirection to difficulty choice | Pass |
+| | Type neither Y/N or type non letter key | Invalid entry message, ask user to answer again | Pass |
+| Rules | | | |
+| | Type "Y" | Redirection to difficulty choice | Pass |
+| | Type "N" | Redirection back to start game | Pass |
+| | Type neither Y/N or type non letter key | Invalid entry message, ask user to answer again | Pass |
+| Difficulty level | | | |
+| | Type "E" | Redirection to main game with easy level choosen | Pass |
+| | Type "H" | Redirection to main game with hard level choosen | Pass |
+| | Type neither E/H or type non letter key | Invalid entry message, ask user to answer again | Pass |
+| Main Game | | | |
+| | Type translation | Correct | Pass |
+| | Type translation | Incorrect  | Pass |
+| Win game | | | |
+| | Type "Y" | Redirection to main game | Pass |
+| | Type "N" | Redirection back to start game | Pass |
+| | Type neither Y/N or type non letter key | Invalid entry message, ask user to answer again | Pass |
+| Loose game | | | |
+| | Type "Y" | Redirection to main game | Pass |
+| | Type "N" | Redirection back to start game | Pass |
+| | Type neither Y/N or type non letter key | Invalid entry message, ask user to answer again | Pass |
+
+## Browser Compatibility
+
+I have tested the deployed application on 3 browsers to check for compatibility. Below are the results.
 
 
 ## Bugs
