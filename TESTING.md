@@ -69,7 +69,8 @@ I have tested the deployed application on 3 browsers to check for compatibility.
 
 While developing this project I came up against a few issues and bugs, below is a list of the some issues I had.
 
-- While loop in the game. This piece of code threw up a few different issues/ bugs while I was developing it. When first written I had created an infinite loop by not having an condition to break or stop it. I also had a problem getting the conditions to end it at the right points. Also calling the spanish word to be displayed caused issues. It went through a few different stages of eveolution until finally getting it all to work correctly. Finished product below.
+
+- While loop in the game. This piece of code threw up a few different issues/ bugs while I was developing it. When first written I had created an infinite loop by not having a condition to break or stop it. I also had a problem getting the conditions to end it at the right points. Also retrieving the spanish word to be displayed and a corrisponding english word to compare to the user input, without the word being repeated in a game caused issues. It went through a few different stages of evolution until finally getting it all to work correctly. Finished product below.
 
     ```python
         game = Game()
@@ -104,11 +105,9 @@ While developing this project I came up against a few issues and bugs, below is 
         finished(game)
     ```
 
-    - To fix this, I put the condition of the while loop in the while statement at the beginning, and realised that I didnt need ">=" and only needed ">" to get the break points of the while loop to stop at the right places. Called the spanish word from the list from within the while loop but kept the creating of the list copy and shuffle outside the while loop.
+    - To fix this, I put the condition of the while loop in the while statement at the beginning, and realised that I didnt need `>=` and only needed `>` to get the break points of the while loop to stop at the right places. In order to output the spanish word a copy of the list of dictionaries was created inside the game function but outside the while loop, the while loop then contained a method to `pop()` out one entry from the list giving it one spanish word to print and its corresponding english word to compare to the users input.
 
-
-
-- Y/N. For the many questions that looked for an answer of either of two letters to be typed. It didnt work with lower case letters. As I had checked the user input against a capital letter. I wnted this to work for both upper and lowe case letters.
+- Y/N. Where the user is prompted to type one of two letters as an answer to a question, I needed it to recongnise upper and lowercase letters, to make the navigation as simple as possible. It didnt work with lower case letters and the beginning. As I had checked the user input against a capital letter.
 
     ```python
     while True:
@@ -121,27 +120,26 @@ While developing this project I came up against a few issues and bugs, below is 
                 func_2()
             else:
                 print(f" Invalid entry, please type 'Y' for yes or 'N' for no")
-
-
     ```
 
-    - To fix this, I added a .upper() method to the user input field, tranforming all the input to upper case. I then used this method for all user input in the application, includeing in the main game, but here i used the .lower() method as all the words in the list are in lowercase.
+    - To fix this, I added a `.upper()` method to the user input field, tranforming all the input to upper case. I then used this method for all user input in the application, includeing in the main game, but here I used the `.lower()` method as all the words in the list are in lowercase.
 
-- Pathways from one function to another
 
-    - To fix this I
+- Function parameters. Building up the flow through the application, calling different functions depending on users input and game results, I came accross a few bugs/errors 
+
+    - To fix this I had to work on the appropriate arguments/parameters being called in a function, to then use that data within the next function.
+
 
 - Line too long. This was a reccurring issue/bug with the print statements in particular. With a max of 80 characters I found the output text exceeded this maximum often.
+
     ![screenshot](documentation/line-too-long.png)
 
     - To fix this, I had to split the text into different print statements and add new lines.
 
-
 ## Unfixed Bugs / Issues
 
-- One issue outstanding is in the main game play, where the user has to type the english translation of the word displayed. It currently just checks to see if the answer is right or wrong. I have not yet implemented an error check when the player types a non leter key. To have a message telling them that is not valid and possibly a typo, giving them a chance to retry that word, without being marked as inncorect.
+- One issue outstanding is in the main game play, where the user has to type the english translation of the word displayed. It currently just checks to see if the answer is right or wrong. I have not yet implemented an error check when the player types a non leter key. To have a message telling them "that is not valid entry and possibly a typo", giving them a chance to retry that word, without being marked as inncorect.
 
-    - Attempted fix: I tried to use the "isalpha()" method to check if the answer is only alphabetic entries 
-
+    - Possible solution is to use the `isalpha()` method to check if the answer is only alphabetic entries.
 
 There are no remaining bugs that I am aware of.
