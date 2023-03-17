@@ -59,6 +59,11 @@ Defensive programming was manually tested with the below user acceptance testing
 
 I have tested the deployed application on 3 browsers to check for compatibility. Below are the results.
 
+| Browser | Screenshot | Notes |
+| --- | --- | --- |
+| Chrome | ![screenshot](documentation/chrome-screenshot.png) | All working as expected |
+| Firefox | ![screenshot](documentation/firefox-screenshot.png) | All working as expected |
+| Edge | ![screenshot](documentation/edge-screenshot.png) | All working as expected |
 
 ## Bugs
 
