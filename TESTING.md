@@ -21,9 +21,9 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 
 | Page | Size | Screenshot | Notes |
 | --- | --- | --- | --- |
-| Spanish Word Game | large monitor | ![screenshot](documentation/lighthouse-monitor.png) | Slightly lower than optimal on the SEO category |
+| Spanish Word Game | Large monitor | ![screenshot](documentation/lighthouse-monitor.png) | Slightly lower than optimal on the SEO category |
 | Spanish Word Game | Laptop | ![screenshot](documentation/lighthouse-laptop.png) | Same issue with SEO |
-| Spanish Word Game | tablet | ![screenshot](documentation/lighthouse-tablet.png) | Same issue with SEO |
+| Spanish Word Game | Tablet | ![screenshot](documentation/lighthouse-tablet.png) | Same issue with SEO |
 
 ## Defensive Programming
 
